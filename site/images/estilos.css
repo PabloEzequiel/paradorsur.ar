@@ -1,0 +1,130 @@
+/* 
+ * Este CSS representa las siguientes divisiones del Layout:
+
+ * - #menuLeft
+ * - #navigation
+ * - #left
+ * - .footer
+ *
+ */
+
+* {
+	font-family: Arial, Helvetica, sans-serif;
+	color:           #000066;	
+	font-size: 12px;
+}
+
+
+#tdLeft {
+	border-left:       1px solid #000033;
+	border-right:      1px solid #000033;
+	background-color:  "#E5E5E5";
+}
+
+
+#menuLeft {
+	background-color: #E3E3E3;
+	width:            180px;
+
+}
+
+
+
+
+
+
+
+
+/*--[ NAVIGATION LEFT ]-*/
+
+#navigation td {
+	border-bottom:   1px solid #000099;
+	margin-left:     20px; 
+}
+	
+#navigation a {
+	text-decoration: none;
+	text-align:      left;
+	font-size:       12px;
+	font-weight:     bold;
+	display:         block;
+	padding:         6px 6px 6px 26px;	
+    background:      url("img/mm_arrow_green.gif") 14px 45% no-repeat;
+	color:           #3333FF;	
+}
+		
+#navigation a:hover {
+	background:      url("img/mm_arrow_blue.gif") 14px 45% no-repeat  #ffffff;
+	color:           #000077;
+}
+
+
+/*--[ NAVIGATION LEFT SUBMENU ]-*/
+
+#navigation2 td {
+	border-bottom:   1px solid #CCCCCC;
+	margin-left:     40px; 
+}
+	
+#navigation2 a {
+	text-decoration: none;
+	text-align:      left;
+	font-size:       12px;
+	font-weight:     normal;
+	display:         block;
+	padding:         3px 3px 3px 40px;	
+    background:      url("img/mm_arrow_green.gif") 24px 45% no-repeat #F6F6F6;
+	color:           #1122EE;	
+}
+	
+	
+#navigation2 a:hover {
+	background:      url("img/mm_arrow_blue.gif") 24px 45% no-repeat  #CCCCCC;
+	color:           #000099;
+}
+
+	
+
+
+
+/*---[ FOOTER ]----*/
+
+.footer{
+	height: 16px;
+	background-color: #3300CC;
+}
+
+div#footer{
+	font-family:      Arial, Helvetica, sans-serif, Verdana, Geneva;
+	font-size:        12px;
+	text-align:       center;
+	color:            #FFFFFF;
+	margin-top:       2px;	
+	margin-right:     15px;
+	margin-bottom:    2px;	
+}
+
+div#footer a{
+	color:          #FFFFFF;
+	text-decoration:none;
+}
+
+div#footer a:hover{
+	color:          #FFFFCC;
+	text-decoration:underline
+}
+
+div#contacto{
+	color: #000000;
+	background-color: #CCCCCC;
+	text-align: center;
+	vertical-align: middle;
+	padding: 2%;
+	margin: 1%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	width: 90%;
+	font-size: 14px;
+	border-color: #333333;
+	border-style:dashed;
+	border-width:thin;
+}

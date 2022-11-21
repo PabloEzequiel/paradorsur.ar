@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+ <url>
+  <loc>http://paradorsur.50webs.com/contacto.html</loc>
+  <priority>0.5000</priority>
+ </url>
+ <url>
+  <loc>http://paradorsur.50webs.com/contacto_error.html</loc>
+  <priority>0.5000</priority>
+ </url>
+ <url>
+  <loc>http://paradorsur.50webs.com/contacto_ok.html</loc>
+  <priority>0.5000</priority>
+ </url>
+ <url>
+  <loc>http://paradorsur.50webs.com/contacto_old.html</loc>
+  <priority>0.5000</priority>
+ </url>
+ <url>
+  <loc>http://paradorsur.50webs.com/distancias.html</loc>
+  <priority>0.5000</priority>
+ </url>
+ <url>
+  <loc>http://paradorsur.50webs.com/fotos.html</loc>
+  <priority>0.5000</priority>
+ </url>
+ <url>
+  <loc>http://paradorsur.50webs.com/index.html</loc>
+  <priority>0.5000</priority>
+ </url>
+ <url>
+  <loc>http://paradorsur.50webs.com/mapas.html</loc>
+  <priority>0.5000</priority>
+ </url>
+ <url>
+  <loc>http://paradorsur.50webs.com/promociones.html</loc>
+  <priority>0.5000</priority>
+ </url>
+</urlset>
