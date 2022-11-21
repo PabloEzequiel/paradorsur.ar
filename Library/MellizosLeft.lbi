@@ -1,0 +1,72 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<link href="../images/estilos.css" rel="stylesheet" type="text/css">
+
+	<style type="text/css">
+<!--
+.Estilo1 {font-weight: bold}
+.style2 {color: #003399}
+-->
+    </style>
+	<table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td id="menuLeft" width="24%" valign="top">
+		  
+<table id="navigation" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="24" align="center" bgcolor="#0099FF"><strong>Secciones</strong></td>
+  </tr>
+  <tr>
+    <td><a href="../index.html" class="Estilo1">Inicio</a></td>
+  </tr>
+   <tr>
+    <td><a href="../fotos_lasgrutas.html" class="Estilo1">Fotos</a></td>
+  </tr>   
+  <tr>
+    <td> 
+    
+    
+    
+    
+    
+ <table id="navigation2" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="../fotos.html" class="Estilo1">Departamentos</a></td>
+  </tr>  
+  <tr>
+    <td><a href="../fotos_lasgrutas_laplaya.html" class="Estilo1">La Playa</a></td>
+  </tr>   
+  <tr>
+    <td bgcolor="#9999CC"> <a href="../fotos_lasgrutas_elcentro.html" class="style2">El Centro</a></td>
+  </tr>   
+  <tr>
+    <td><a href="../fotos_lasgrutas_terrazas.html" class="Estilo1">Terrazas al Mar</a></td>
+  </tr>
+  <tr>
+    <td><a href="../fotos_lasgrutas_coloradas.html" class="Estilo1">Piedras Coloradas</a></td>
+  </tr>
+   <tr>
+    <td><a href="../fotos_historia.html" class="Estilo1">La historia</a></td>
+  </tr>  
+</table>    </td>
+  </tr>
+  <tr>
+    <td><a href="../video.html" class="Estilo1">Video</a></td>
+  </tr>   
+  <tr>
+    <td><a href="../mapas.html" class="Estilo1">Ubicación y Mapa</a></td>
+  </tr>   
+  <tr>
+    <td><a href="../distancias.html" class="Estilo1">Distancias</a></td>
+  </tr>
+  <tr>
+    <td><a href="../contacto.html" class="Estilo1">Contacto</a></td>
+  </tr>
+</table>		  
+		  
+		  </td>
+		</tr>
+	</table>		  
+
+
