@@ -12,7 +12,8 @@ git subtree push --prefix site  origin gh-pages
 
 cd /d/sw/BIND9
 
-./dig   paradorsur.ar   +noall +answer -t A
+./dig       paradorsur.ar   +noall +answer -t A
+./dig   www.paradorsur.ar   +noall +answer -t A
 
 
 
