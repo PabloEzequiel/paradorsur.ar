@@ -7,11 +7,11 @@
 GitHub Pages publishes directly from:
 
     branch: master
-    folder: /site
+    folder: /root
 
 The custom domain is defined in:
 
-    site/CNAME
+    CNAME
 
 # Validate 
 
