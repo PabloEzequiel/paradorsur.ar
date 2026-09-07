@@ -4,7 +4,14 @@
 
 # GH Pages
 
-git subtree push --prefix site origin gh-pages
+GitHub Pages publishes directly from:
+
+    branch: master
+    folder: /site
+
+The custom domain is defined in:
+
+    site/CNAME
 
 # Validate 
 
