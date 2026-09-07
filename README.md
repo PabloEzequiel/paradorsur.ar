@@ -1,27 +1,25 @@
-# www.paradorsur.com.ar
+# paradorsur.ar
 
 
 
 # GH Pages
 
-git subtree push --prefix paradorsur  origin gh-pages
+git subtree push --prefix site origin gh-pages
 
 # Validate 
 
-cd /d/sw/BIND9
-
-./dig       paradorsur.com.ar   +noall +answer -t A
-./dig   www.paradorsur.com.ar   +noall +answer -t A
+dig paradorsur.ar +noall +answer -t A
+dig www.paradorsur.ar +noall +answer -t A
 
 
 
 # Web Site
 
-    https://pabloezequiel.github.io/www.paradorsur.com.ar/
+    https://paradorsur.ar/
 
 
 # SSH Config purebas
 
 .git/config
 
-url = git@github-PabloEzequiel:PabloEzequiel/www.paradorsur.com.ar.git
+url = git@github-PabloEzequiel:PabloEzequiel/paradorsur.ar.git
