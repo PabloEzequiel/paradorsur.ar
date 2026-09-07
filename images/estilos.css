@@ -174,6 +174,147 @@ div#contacto .contacto-mapa {
 	padding-top: 10px;
 }
 
+.home-apartment-card {
+	background: #f7fbff;
+	border: 1px solid #bfd3e8;
+	border-top: 4px solid #0099FF;
+	box-sizing: border-box;
+	margin: 18px auto 10px auto;
+}
+
+.home-apartment-heading {
+	border-bottom: 1px solid #d6e3f0;
+	padding: 14px 16px 10px 16px;
+}
+
+.home-apartment-heading h2 {
+	color: #003300;
+	font-size: 18px;
+	line-height: 23px;
+	margin: 0 0 5px 0;
+}
+
+.home-apartment-heading p {
+	font-size: 12px;
+	margin: 0;
+}
+
+.home-apartment-features {
+	background: #ffffff;
+	padding: 12px 16px 14px 16px;
+	vertical-align: top;
+}
+
+.home-apartment-features h3 {
+	color: #0074b8;
+	font-size: 12px;
+	margin: 0 0 7px 0;
+}
+
+.home-apartment-features ul {
+	margin: 0;
+	padding-left: 16px;
+}
+
+.home-apartment-features li {
+	font-size: 12px;
+	line-height: 19px;
+	margin-bottom: 2px;
+}
+
+.home-registration {
+	background: #eef7ee;
+	border-left: 4px solid #5f9f5f;
+	box-sizing: border-box;
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0 auto 14px auto;
+	padding: 8px 12px;
+	width: 95%;
+}
+
+.home-mono-gallery {
+	background: #ffffff;
+	border: 1px solid #d6e3f0;
+	border-top: 0;
+	box-sizing: border-box;
+	margin: -10px auto 18px auto;
+	padding: 12px;
+	width: 95%;
+}
+
+.home-mono-gallery p {
+	margin: 0 0 14px 0;
+}
+
+.home-mono-gallery p:last-child {
+	margin-bottom: 0;
+}
+
+.home-mono-gallery img {
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
+.home-complex-heading {
+	background: #f7fbff;
+	border: 1px solid #bfd3e8;
+	border-top: 4px solid #0099FF;
+	padding: 14px 16px 10px 16px;
+}
+
+.home-complex-heading h2 {
+	color: #003300;
+	font-size: 18px;
+	line-height: 23px;
+	margin: 0 0 5px 0;
+}
+
+.home-complex-heading p {
+	font-size: 12px;
+	margin: 0;
+}
+
+.home-complex-summary {
+	background: #ffffff;
+	border: 1px solid #d6e3f0;
+	border-top: 0;
+	padding: 10px 16px 12px 16px;
+}
+
+.home-complex-summary ul {
+	margin: 0;
+	padding-left: 16px;
+}
+
+.home-complex-summary li {
+	font-size: 12px;
+	line-height: 19px;
+}
+
+.home-complex-gallery {
+	background: #ffffff;
+	border: 1px solid #d6e3f0;
+	border-top: 0;
+	padding: 12px;
+}
+
+.home-complex-gallery img {
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
+.home-logo {
+	margin: 18px auto;
+	text-align: center;
+	width: 95%;
+}
+
+.home-logo img {
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
 .depto-page {
 	margin: 0 auto;
 	width: 96%;
