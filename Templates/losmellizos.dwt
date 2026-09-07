@@ -123,10 +123,7 @@ document.write("<center>" + date + " de " + lmonth + " de " + year + "</center>"
   </tr>   
   <tr>
     <td><a href="../mapas.html" class="Estilo1">Ubicaci�n y Mapa</a></td>
-  </tr>   
-  <tr>
-    <td><a href="../distancias.html" class="Estilo1">Distancias</a></td>
-  </tr>
+  </tr>   
   <tr>
     <td><a href="../contacto.html" class="Estilo1">Contacto</a></td>
   </tr>
@@ -214,9 +211,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 	<a href="../index.html">Inicio</a> | 
     <a href="../psur_monos.html">Fotos</a> | 
-    <a href="../mapas.html">Mapas</a> | 
-    <a href="../distancias.html">Distancias</a> | 
-    <a href="../contacto.html">Contacto</a> 
+    <a href="../mapas.html">Mapas</a> | <a href="../contacto.html">Contacto</a> 
 
 
 </div></td>
