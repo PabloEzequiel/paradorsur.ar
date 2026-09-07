@@ -173,3 +173,429 @@ div#contacto .contacto-mapa {
 	line-height: 17px;
 	padding-top: 10px;
 }
+
+.depto-page {
+	margin: 0 auto;
+	width: 96%;
+}
+
+.depto-hero {
+	background: #f7fbff;
+	border: 1px solid #bfd3e8;
+	border-top: 4px solid #0099FF;
+	margin: 8px 0 16px 0;
+	padding: 14px 16px;
+}
+
+.depto-hero h1 {
+	color: #003300;
+	font-size: 19px;
+	line-height: 24px;
+	margin: 0 0 8px 0;
+}
+
+.depto-hero p {
+	font-size: 13px;
+	line-height: 19px;
+	margin: 0;
+}
+
+.depto-resumen {
+	background: #ffffff;
+	border: 1px solid #d6e3f0;
+	margin: 0 0 16px 0;
+	padding: 10px;
+}
+
+.depto-resumen td {
+	border-right: 1px solid #d6e3f0;
+	text-align: center;
+}
+
+.depto-resumen td:last-child {
+	border-right: 0;
+}
+
+.depto-resumen strong {
+	color: #003300;
+	display: block;
+	font-size: 14px;
+	margin-bottom: 3px;
+}
+
+.depto-resumen span {
+	font-size: 11px;
+}
+
+.depto-servicios {
+	background: #ffffff;
+	border: 1px solid #d6e3f0;
+	margin-bottom: 16px;
+	padding: 12px 14px;
+}
+
+.depto-servicios h2,
+.depto-galeria h2 {
+	color: #003300;
+	font-size: 15px;
+	margin: 0 0 10px 0;
+}
+
+.depto-servicios ul {
+	margin: 0;
+	padding-left: 18px;
+}
+
+.depto-servicios li {
+	line-height: 20px;
+}
+
+.depto-nota {
+	background: #eef7ee;
+	border-left: 4px solid #5f9f5f;
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0 0 16px 0;
+	padding: 9px 12px;
+}
+
+.depto-galeria {
+	margin-bottom: 16px;
+}
+
+.depto-foto {
+	background: #ffffff;
+	border: 1px solid #d6e3f0;
+	margin: 0 0 16px 0;
+	padding: 8px;
+	text-align: center;
+}
+
+.depto-foto img {
+	border: 0;
+	display: block;
+	height: auto;
+	width: 100%;
+}
+
+.home-page {
+	margin: 0 auto;
+	width: 96%;
+}
+
+.home-hero {
+	background: #f7fbff;
+	border: 1px solid #bfd3e8;
+	display: grid;
+	grid-template-columns: 1fr 42%;
+	margin: 8px 0 16px 0;
+	min-height: 220px;
+}
+
+.home-hero-copy {
+	padding: 28px 24px;
+}
+
+.home-hero h1,
+.home-intro h2 {
+	color: #003300;
+	font-size: 24px;
+	line-height: 29px;
+	margin: 0 0 10px 0;
+}
+
+.home-hero img {
+	height: 100%;
+	min-height: 220px;
+	object-fit: cover;
+	width: 100%;
+}
+
+.home-kicker {
+	color: #0074b8;
+	font-size: 11px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	margin: 0 0 9px 0;
+	text-transform: uppercase;
+}
+
+.home-lead,
+.home-intro p {
+	font-size: 14px;
+	line-height: 20px;
+	margin: 0;
+}
+
+.home-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 20px;
+}
+
+.home-actions a {
+	border: 1px solid #0074b8;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 9px 12px;
+	text-decoration: none;
+}
+
+.home-action-primary {
+	background: #0074b8;
+	color: #ffffff;
+}
+
+.home-action-secondary {
+	background: #ffffff;
+	color: #0074b8;
+}
+
+.home-intro {
+	align-items: center;
+	background: #ffffff;
+	border: 1px solid #d6e3f0;
+	display: grid;
+	grid-template-columns: 1fr 190px;
+	margin-bottom: 16px;
+	padding: 16px;
+}
+
+.home-intro h2 {
+	font-size: 18px;
+	line-height: 23px;
+}
+
+.home-distance {
+	border-left: 1px solid #d6e3f0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	line-height: 18px;
+	padding-left: 18px;
+}
+
+.home-distance strong {
+	color: #003300;
+	font-size: 16px;
+}
+
+.home-distance span {
+	font-size: 11px;
+}
+
+.home-options {
+	display: grid;
+	gap: 12px;
+	grid-template-columns: repeat(3, 1fr);
+	margin-bottom: 16px;
+}
+
+.home-option {
+	background: #ffffff;
+	border: 1px solid #d6e3f0;
+	color: #000066;
+	text-decoration: none;
+}
+
+.home-option:hover {
+	border-color: #0074b8;
+}
+
+.home-option img {
+	display: block;
+	height: 145px;
+	object-fit: cover;
+	width: 100%;
+}
+
+.home-option-body {
+	display: block;
+	padding: 11px 12px 12px 12px;
+}
+
+.home-option strong,
+.home-option small,
+.home-option em {
+	display: block;
+}
+
+.home-option strong {
+	color: #003300;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.home-option small {
+	font-size: 11px;
+	margin-bottom: 10px;
+}
+
+.home-option em {
+	color: #0074b8;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.home-contact-link {
+	background: #eef7ee;
+	border-left: 4px solid #5f9f5f;
+	font-size: 12px;
+	line-height: 20px;
+	margin-bottom: 18px;
+	padding: 10px 12px;
+}
+
+.home-contact-link strong {
+	color: #003300;
+	display: block;
+}
+
+.home-contact-link a {
+	font-weight: bold;
+}
+
+.home-legacy {
+	display: none;
+}
+
+@media (max-width: 680px) {
+	.home-hero,
+	.home-intro {
+		display: block;
+	}
+
+	.home-hero-copy {
+		padding: 20px 16px;
+	}
+
+	.home-hero h1 {
+		font-size: 20px;
+		line-height: 25px;
+	}
+
+	.home-hero img {
+		height: 170px;
+		min-height: 0;
+	}
+
+	.home-distance {
+		border-left: 0;
+		border-top: 1px solid #d6e3f0;
+		margin-top: 14px;
+		padding: 12px 0 0 0;
+	}
+
+	.home-options {
+		grid-template-columns: 1fr;
+	}
+
+	.home-option {
+		display: grid;
+		grid-template-columns: 110px 1fr;
+	}
+
+	.home-option img {
+		height: 100%;
+		min-height: 120px;
+	}
+}
+
+.lugares-page {
+	margin: 0 auto;
+	width: 94%;
+}
+
+.lugares-hero {
+	background: #f7fbff;
+	border: 1px solid #bfd3e8;
+	border-top: 4px solid #0099FF;
+	margin: 8px 0 16px 0;
+	padding: 18px 20px;
+}
+
+.lugares-hero h1 {
+	color: #003300;
+	font-size: 22px;
+	line-height: 27px;
+	margin: 0 0 8px 0;
+}
+
+.lugares-hero p:last-child {
+	font-size: 13px;
+	line-height: 19px;
+	margin: 0;
+}
+
+.lugares-grid {
+	display: grid;
+	gap: 14px;
+	grid-template-columns: repeat(2, 1fr);
+	margin-bottom: 18px;
+}
+
+.lugar-card {
+	background: #ffffff;
+	border: 1px solid #d6e3f0;
+	color: #000066;
+	text-decoration: none;
+}
+
+.lugar-card:hover {
+	border-color: #0074b8;
+}
+
+.lugar-card img {
+	display: block;
+	height: 180px;
+	object-fit: cover;
+	width: 100%;
+}
+
+.lugar-card span {
+	display: block;
+	padding: 11px 13px 13px 13px;
+}
+
+.lugar-card strong,
+.lugar-card small,
+.lugar-card em {
+	display: block;
+}
+
+.lugar-card strong {
+	color: #003300;
+	font-size: 15px;
+	margin-bottom: 5px;
+}
+
+.lugar-card small {
+	font-size: 11px;
+	line-height: 16px;
+	margin-bottom: 8px;
+}
+
+.lugar-card em {
+	color: #0074b8;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+}
+
+@media (max-width: 680px) {
+	.lugares-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.lugar-card {
+		display: grid;
+		grid-template-columns: 120px 1fr;
+	}
+
+	.lugar-card img {
+		height: 100%;
+		min-height: 135px;
+	}
+}
