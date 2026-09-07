@@ -115,16 +115,61 @@ div#footer a:hover{
 }
 
 div#contacto{
-	color: #000000;
-	background-color: #CCCCCC;
-	text-align: center;
-	vertical-align: middle;
-	padding: 2%;
-	margin: 1%;
+	background: #f7fbff;
+	border: 1px solid #9bb8d8;
+	border-top: 4px solid #0099FF;
+	color: #000066;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	width: 90%;
-	font-size: 14px;
-	border-color: #333333;
-	border-style:dashed;
-	border-width:thin;
+	margin: 12px auto 18px auto;
+	padding: 14px 18px 16px 18px;
+	text-align: center;
+	width: 88%;
+}
+
+div#contacto p {
+	margin: 0;
+}
+
+div#contacto .contacto-titulo {
+	color: #003300;
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 12px;
+}
+
+div#contacto .contacto-telefonos {
+	background-color: #ffffff;
+	border: 1px solid #c7d9ee;
+	margin: 0 auto 12px auto;
+	padding: 8px 10px;
+	width: 82%;
+}
+
+div#contacto .contacto-telefonos strong {
+	display: inline-block;
+	font-size: 15px;
+	min-width: 48px;
+	text-align: right;
+}
+
+div#contacto .contacto-telefono {
+	font-size: 15px;
+	line-height: 20px;
+}
+
+div#contacto .contacto-links {
+	line-height: 22px;
+	margin-bottom: 12px;
+}
+
+div#contacto .contacto-links a,
+div#contacto .contacto-mapa a {
+	font-weight: bold;
+}
+
+div#contacto .contacto-mapa {
+	border-top: 1px solid #c7d9ee;
+	font-size: 11px;
+	line-height: 17px;
+	padding-top: 10px;
 }
