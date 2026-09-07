@@ -259,6 +259,14 @@ div#contacto .contacto-mapa {
 	padding: 9px 12px;
 }
 
+.deptos-index-page .home-options {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.deptos-index-page .home-option img {
+	height: 180px;
+}
+
 .depto-galeria {
 	margin-bottom: 16px;
 }
@@ -492,6 +500,10 @@ div#contacto .contacto-mapa {
 		grid-template-columns: 1fr;
 	}
 
+	.deptos-index-page .home-options {
+		grid-template-columns: 1fr;
+	}
+
 	.home-option {
 		display: grid;
 		grid-template-columns: 110px 1fr;
@@ -501,11 +513,261 @@ div#contacto .contacto-mapa {
 		height: 100%;
 		min-height: 120px;
 	}
+
+	.deptos-index-page .home-option img {
+		height: 100%;
+	}
+}
+
+.media-page {
+	box-sizing: border-box;
+	margin: 0 0 0 -12px;
+	width: calc(100% + 12px);
+}
+
+.media-page img {
+	background: #ffffff;
+	border: 1px solid #d6e3f0;
+	box-sizing: border-box;
+	display: block;
+	height: auto;
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 7px;
+}
+
+.photo-gallery {
+	background: #f7fbff;
+	border: 1px solid #bfd3e8;
+	border-top: 4px solid #0099FF;
+	padding: 18px 16px 4px 16px;
+}
+
+.photo-gallery > p {
+	margin: 0 0 16px 0;
+	text-align: center;
+}
+
+.photo-gallery > p:first-child {
+	color: #003300;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 21px;
+	text-align: left;
+}
+
+.photo-gallery > p:not(:first-child) {
+	margin-bottom: 18px;
+}
+
+.photo-header {
+	border-bottom: 1px solid #d6e3f0;
+	margin: 0 0 16px 0;
+	padding: 0 4px 14px 4px;
+}
+
+.photo-header h1,
+.video-header h1 {
+	color: #003300;
+	font-size: 21px;
+	line-height: 26px;
+	margin: 0 0 7px 0;
+}
+
+.photo-header p:last-child,
+.video-header p:last-child {
+	font-size: 13px;
+	line-height: 19px;
+	margin: 0;
+}
+
+.photo-grid {
+	display: grid;
+	gap: 12px;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	padding-bottom: 14px;
+}
+
+.photo-item {
+	background: #ffffff;
+	border: 1px solid #d6e3f0;
+	margin: 0;
+	padding: 6px;
+}
+
+.photo-item img {
+	border: 0;
+	display: block;
+	padding: 0;
+	width: 100%;
+}
+
+.photo-gallery table {
+	background: #ffffff;
+	border: 1px solid #d6e3f0;
+	margin: 0 auto 18px auto;
+	max-width: 100%;
+}
+
+.history-gallery table {
+	border: 0;
+}
+
+.history-gallery h6 {
+	color: #003300;
+	font-size: 15px;
+	line-height: 21px;
+	margin: 0 0 10px 0;
+}
+
+.history-gallery table {
+	background: #ffffff;
+	border: 1px solid #d6e3f0;
+	border-collapse: separate;
+	border-spacing: 6px;
+	width: 100%;
+}
+
+.video-page,
+.map-page {
+	background: #f7fbff;
+	border: 1px solid #bfd3e8;
+	border-top: 4px solid #0099FF;
+	padding: 18px 20px;
+}
+
+.video-page > p:first-of-type,
+.map-page > p:first-of-type {
+	color: #003300;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 21px;
+}
+
+.video-page li,
+.map-page li {
+	line-height: 20px;
+	margin-left: 18px;
+}
+
+.video-page iframe {
+	border: 0;
+	display: block;
+	height: 100%;
+	margin: 0;
+	min-height: 0;
+	width: 500px;
+}
+
+.video-header {
+	border-bottom: 1px solid #d6e3f0;
+	margin-bottom: 16px;
+	padding-bottom: 14px;
+}
+
+.video-grid {
+	display: block;
+	margin-bottom: 16px;
+}
+
+.video-card {
+	background: #ffffff;
+	border: 1px solid #d6e3f0;
+	box-sizing: border-box;
+	margin: 0;
+	margin-bottom: 14px;
+	overflow: hidden;
+	padding: 12px;
+}
+
+.video-card:last-child {
+	margin-bottom: 0;
+}
+
+.video-card h2 {
+	color: #003300;
+	font-size: 14px;
+	margin: 0 0 5px 0;
+}
+
+.video-card p {
+	font-size: 11px;
+	line-height: 16px;
+	margin: 0 0 10px 0;
+}
+
+.video-card iframe {
+	aspect-ratio: 16 / 9;
+	box-sizing: border-box;
+	max-width: 100%;
+	width: 100%;
+}
+
+.video-legacy {
+	display: none;
+}
+
+.map-page > p,
+.map-page > ul,
+.map-page > iframe,
+.map-page > hr,
+.map-page > table {
+	max-width: 100%;
+}
+
+.map-page > iframe {
+	display: block;
+	height: 300px;
+	margin: 16px auto;
+	width: 500px;
+}
+
+.map-page #distancias {
+	border-collapse: collapse;
+	font-size: 11px;
+	margin: 12px auto;
+	width: 100%;
+}
+
+.map-page #distancias td {
+	padding: 4px 7px;
+}
+
+@media (max-width: 680px) {
+	.media-page,
+	.photo-gallery,
+	.video-page,
+	.map-page {
+		margin: 0;
+		padding: 12px 10px;
+		width: auto;
+	}
+
+	.photo-gallery img {
+		padding: 4px;
+		width: 100%;
+	}
+
+	.photo-grid,
+	.video-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.photo-gallery table {
+		display: block;
+		overflow-x: auto;
+	}
+
+	.video-page iframe,
+	.map-page > iframe {
+		width: 100%;
+	}
 }
 
 .lugares-page {
-	margin: 0 auto;
-	width: 94%;
+	box-sizing: border-box;
+	margin: 0 0 0 -12px;
+	width: calc(100% + 12px);
 }
 
 .lugares-hero {
@@ -587,6 +849,11 @@ div#contacto .contacto-mapa {
 @media (max-width: 680px) {
 	.lugares-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.lugares-page {
+		margin: 0;
+		width: auto;
 	}
 
 	.lugar-card {
