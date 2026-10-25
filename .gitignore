@@ -63,3 +63,6 @@ typings/
 # macOS
 .DS_Store
 
+# Photos kept locally after removal from the gallery
+images/dt-mono/no/
+
