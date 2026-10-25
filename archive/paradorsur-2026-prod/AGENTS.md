@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This is the static site for `paradorsur.ar`. Published pages such as `index.html`, `contacto.html`, and `psur_dosamb.html` live in the repository root. `images/`, `images2015/`, and `images2023/` contain site assets; `images/estilos.css` holds shared legacy styles. `Templates/` and `Library/` contain Dreamweaver template and library sources. `prototipos/` contains an unlinked reservation-agenda mockup with fictional data. `CNAME` defines the production domain. GitHub Pages publishes the root of `master` directly, so anything committed there may become public after deployment.
+This repository hosts the static site for `paradorsur.ar`. The previous production site is preserved under `archive/paradorsur-2026-prod/`, including its HTML/PHP pages, `images/`, `images2015/`, `images2023/`, `Templates/`, and `Library/`. New published pages belong in the repository root. `CNAME` defines the production domain. GitHub Pages publishes the root of `master` directly, so anything committed there may become public after deployment, including files in `archive/`.
 
 ## Build, Test, and Development Commands
 

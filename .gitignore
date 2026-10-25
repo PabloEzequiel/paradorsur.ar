@@ -63,5 +63,3 @@ typings/
 # macOS
 .DS_Store
 
-# Deprecated site folder
-site/

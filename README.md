@@ -13,6 +13,13 @@ The custom domain is defined in:
 
     CNAME
 
+The previous production site is preserved in:
+
+    archive/paradorsur-2026-prod/
+
+The current site is published from `index.html`, `css/`, `js/`, and `images/`
+in the repository root.
+
 # Validate 
 
 dig paradorsur.ar +noall +answer -t A
