@@ -140,9 +140,9 @@ body.gallery-open{overflow:hidden}.gallery-dialog{width:min(900px,calc(100vw - 3
 @media(max-width:420px){.intro-contact-actions{flex-direction:column;max-width:300px;margin-inline:auto}.intro-whatsapp{justify-content:flex-start}.intro-whatsapp>span:last-child{margin-left:auto}}
 
 /* A quiet signature in the gallery viewer, independent of the photo. */
-.gallery-stage .gallery-watermark{inset:auto auto 18px 22px;width:80px;height:auto;border-radius:0;opacity:.4;pointer-events:none;user-select:none}
+.gallery-stage .gallery-watermark{inset:24px clamp(32px,5vw,80px) auto auto;width:80px;height:auto;border-radius:0;opacity:.4;pointer-events:none;user-select:none}
 :root[data-theme="dark"] .gallery-stage .gallery-watermark{filter:brightness(0) invert(1)}
-@media(max-width:620px){.gallery-stage .gallery-watermark{left:12px;bottom:12px;width:52px}}
+@media(max-width:620px){.gallery-stage .gallery-watermark{inset:16px 24px auto auto;width:52px}}
 
 .gallery-stage img[hidden]{display:none}
 
