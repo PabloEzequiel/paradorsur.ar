@@ -1,0 +1,396 @@
+{
+  "languageTag": "en",
+  "dateLocale": "en-US",
+  "meta": {
+    "title": "Parador Sur | A relaxing stay near the sea",
+    "description": "Parador Sur: apartments for 2 to 4 guests in Las Grutas, three blocks from the sea."
+  },
+  "nav": {
+    "skip": "Skip to content",
+    "backToTop": "Parador Sur, back to top",
+    "label": "Main navigation",
+    "complex": "The property",
+    "stays": "Apartments",
+    "photos": "Photos",
+    "location": "Location",
+    "contact": "Contact",
+    "cta": "Check availability",
+    "language": "Language",
+    "open": "Open menu",
+    "close": "Close menu",
+    "languages": {
+      "es": "Español",
+      "en": "English",
+      "pt": "Português"
+    }
+  },
+  "theme": {
+    "darkLabel": "Dark mode",
+    "lightLabel": "Light mode",
+    "darkAction": "Switch to dark mode",
+    "lightAction": "Switch to light mode"
+  },
+  "hero": {
+    "eyebrow": "PARADOR SUR · LAS GRUTAS",
+    "titleTop": "A relaxing stay",
+    "titleBottom": "near the sea.",
+    "text": "Four apartments to enjoy Las Grutas at your own pace. A place to head out, come back, and feel at home.",
+    "cta": "Explore the apartments",
+    "pause": "Pause photo slideshow",
+    "resume": "Resume photo slideshow",
+    "previous": "Previous cover photo",
+    "next": "Next cover photo",
+    "slides": [
+      "Exterior of the Parador Sur apartments",
+      "Patio and apartment entrances beneath the shade sails",
+      "Kitchen and dining area of a one-bedroom apartment",
+      "Living area inside the studio",
+      "Parador Sur lit up at night",
+      "Street view of the Parador Sur apartments"
+    ]
+  },
+  "inquiry": {
+    "eyebrow": "YOUR NEXT STAY",
+    "title": "When are you coming?",
+    "arrival": "Check-in",
+    "departure": "Check-out",
+    "guests": "Guests",
+    "options": {
+      "2": "2 guests",
+      "3": "3 guests",
+      "4": "4 guests"
+    },
+    "submit": "Ask on WhatsApp",
+    "note": "Availability and rates are confirmed on WhatsApp.",
+    "dateError": "Check-out must be after check-in.",
+    "whatsappMessage": "Hi, I would like to ask about availability at Parador Sur from {start} to {end} for {guests} guests."
+  },
+  "intro": {
+    "eyebrow": "A PLACE TO COME BACK TO",
+    "titleTop": "Enjoy Las Grutas",
+    "titleEm": "your own way.",
+    "text": "In Terrazas al Mar, three blocks from the coast, Parador Sur has two studios at the front and two one-bedroom apartments at the rear. Each sleeps 2 to 4 guests.",
+    "facts": {
+      "units": "apartments",
+      "blocks": "blocks from the sea",
+      "people": "guests per unit"
+    }
+  },
+  "band": {
+    "label": "Photos of Parador Sur and Las Grutas",
+    "alts": [
+      "The beach at Terrazas al Mar",
+      "Exterior of Parador Sur",
+      "Parador Sur lit up at night"
+    ]
+  },
+  "stays": {
+    "eyebrow": "CHOOSE YOUR SPACE",
+    "title": "Your place in Las Grutas",
+    "text": "Two ways to unwind, with everything you need to focus on enjoying your stay.",
+    "mono": {
+      "kind": "01 / AT THE FRONT",
+      "title": "Studio",
+      "text": "A practical, comfortable space to share your beach days.",
+      "imageAlt": "Sofa and living area in the studio"
+    },
+    "dos": {
+      "kind": "02 / AT THE REAR",
+      "title": "One-bedroom apartment",
+      "text": "Separate rooms with more space to relax and spend time together.",
+      "imageAlt": "Kitchen and dining area in the one-bedroom apartment"
+    },
+    "areaLabel": "floor area",
+    "peopleLabel": "guests",
+    "amenitiesTitle": "Amenities",
+    "amenities": [
+      "32″ Samsung Smart TV · digital channels · streaming apps",
+      "Air conditioning",
+      "Fridge and microwave",
+      "Fiber Wi-Fi",
+      "Private barbecue",
+      "Parking space",
+      "Bed linen",
+      "Security alarm"
+    ],
+    "cta": "Ask about this apartment",
+    "capacity": "2 to 4"
+  },
+  "gallerySection": {
+    "eyebrow": "EXPLORE THE SPACES",
+    "title": "Inside the apartments",
+    "text": "Take a look inside the studio and one-bedroom apartment before choosing your stay.",
+    "monoAria": "View studio photo gallery",
+    "dosAria": "View one-bedroom apartment photo gallery",
+    "monoImageAlt": "Sofa and table in the studio",
+    "dosImageAlt": "Bedroom in the one-bedroom apartment",
+    "monoCaption": "View studio",
+    "dosCaption": "View one-bedroom apartment"
+  },
+  "location": {
+    "eyebrow": "TERRAZAS AL MAR",
+    "titleTop": "The beach,",
+    "titleEm": "a short walk away.",
+    "text": "We are at Av. Currú Leuvú 1660, three blocks from the sea and about twenty blocks from the center of Las Grutas.",
+    "cta": "View location",
+    "photoAria": "View Las Grutas photo gallery",
+    "photoAlt": "Tidal pool at Terrazas al Mar",
+    "photoCta": "View Las Grutas photos"
+  },
+  "contact": {
+    "eyebrow": "LET’S TALK",
+    "titleTop": "Your days in Las Grutas",
+    "titleBottom": "start here.",
+    "text": "Write to us about availability, rates, or any questions about the apartments.",
+    "email": "Send an email",
+    "emailSubject": "Parador Sur inquiry",
+    "whatsappMessage": "Hello, I would like to ask about Parador Sur"
+  },
+  "gallery": {
+    "genericTitle": "PARADOR SUR · GALLERY",
+    "titlePrefix": "PARADOR SUR · ",
+    "close": "Close gallery",
+    "previous": "Previous photo",
+    "next": "Next photo",
+    "choose": "Choose a gallery photo",
+    "photoLabel": "Photo {number}: {caption}",
+    "mono": {
+      "title": "STUDIO",
+      "photos": [
+        {
+          "alt": "Studio · exterior entrance",
+          "caption": "Studio · exterior entrance"
+        },
+        {
+          "alt": "Studio · front and patio",
+          "caption": "Studio · front and patio"
+        },
+        {
+          "alt": "Studio · lounge and sofa",
+          "caption": "Studio · lounge and sofa"
+        },
+        {
+          "alt": "Studio · dining area",
+          "caption": "Studio · dining area"
+        },
+        {
+          "alt": "Studio · sofa and lounge",
+          "caption": "Studio · sofa and lounge"
+        },
+        {
+          "alt": "Studio · bed",
+          "caption": "Studio · bed"
+        },
+        {
+          "alt": "Studio · bedroom",
+          "caption": "Studio · bedroom"
+        },
+        {
+          "alt": "Studio · hallway",
+          "caption": "Studio · hallway"
+        },
+        {
+          "alt": "Studio · kitchen",
+          "caption": "Studio · kitchen"
+        },
+        {
+          "alt": "Studio · countertop and kitchen",
+          "caption": "Studio · countertop and kitchen"
+        },
+        {
+          "alt": "Studio · kitchen and laundry area",
+          "caption": "Studio · kitchen and laundry area"
+        },
+        {
+          "alt": "Studio · fridge and entrance",
+          "caption": "Studio · fridge and entrance"
+        },
+        {
+          "alt": "Studio · bathroom",
+          "caption": "Studio · bathroom"
+        },
+        {
+          "alt": "Studio · indoor dining area",
+          "caption": "Studio · indoor dining area"
+        },
+        {
+          "alt": "Studio · indoor dining area",
+          "caption": "Studio · indoor dining area"
+        },
+        {
+          "alt": "Studio · entrance",
+          "caption": "Studio · entrance"
+        },
+        {
+          "alt": "Studio · exterior",
+          "caption": "Studio · exterior"
+        },
+        {
+          "alt": "Studio · parking area",
+          "caption": "Studio · parking area"
+        },
+        {
+          "alt": "Studio · front of the property",
+          "caption": "Studio · front of the property"
+        },
+        {
+          "alt": "Studio · dining and lounge",
+          "caption": "Studio · dining and lounge"
+        }
+      ]
+    },
+    "dos": {
+      "title": "ONE-BEDROOM APARTMENT",
+      "photos": [
+        {
+          "alt": "One-bedroom apartment · patio and entrances",
+          "caption": "One-bedroom apartment · patio and entrances"
+        },
+        {
+          "alt": "One-bedroom apartment · bedroom",
+          "caption": "One-bedroom apartment · bedroom"
+        },
+        {
+          "alt": "One-bedroom apartment · bathroom",
+          "caption": "One-bedroom apartment · bathroom"
+        },
+        {
+          "alt": "One-bedroom apartment · kitchen and dining area",
+          "caption": "One-bedroom apartment · kitchen and dining area"
+        },
+        {
+          "alt": "One-bedroom apartment · dining area",
+          "caption": "One-bedroom apartment · dining area"
+        },
+        {
+          "alt": "One-bedroom apartment · Las Grutas coast",
+          "caption": "One-bedroom apartment · Las Grutas coast"
+        },
+        {
+          "alt": "One-bedroom apartment · bedroom entrance",
+          "caption": "One-bedroom apartment · bedroom entrance"
+        },
+        {
+          "alt": "One-bedroom apartment · washbasin",
+          "caption": "One-bedroom apartment · washbasin"
+        },
+        {
+          "alt": "One-bedroom apartment · kitchen and dining area",
+          "caption": "One-bedroom apartment · kitchen and dining area"
+        },
+        {
+          "alt": "One-bedroom apartment · dining and lounge",
+          "caption": "One-bedroom apartment · dining and lounge"
+        },
+        {
+          "alt": "One-bedroom apartment · sofa and bathroom entrance",
+          "caption": "One-bedroom apartment · sofa and bathroom entrance"
+        },
+        {
+          "alt": "One-bedroom apartment · bedroom and storage",
+          "caption": "One-bedroom apartment · bedroom and storage"
+        },
+        {
+          "alt": "One-bedroom apartment · bathroom and shower",
+          "caption": "One-bedroom apartment · bathroom and shower"
+        },
+        {
+          "alt": "One-bedroom apartment · lounge and dining area",
+          "caption": "One-bedroom apartment · lounge and dining area"
+        },
+        {
+          "alt": "One-bedroom apartment · exterior entrance",
+          "caption": "One-bedroom apartment · exterior entrance"
+        },
+        {
+          "alt": "One-bedroom apartment · barbecue",
+          "caption": "One-bedroom apartment · barbecue"
+        },
+        {
+          "alt": "One-bedroom apartment · property exterior",
+          "caption": "One-bedroom apartment · property exterior"
+        },
+        {
+          "alt": "One-bedroom apartment · front of property",
+          "caption": "One-bedroom apartment · front of property"
+        }
+      ]
+    },
+    "costa": {
+      "title": "LAS GRUTAS",
+      "photos": [
+        {
+          "alt": "Las Grutas · view from inside a grotto",
+          "caption": "Las Grutas · view from inside a grotto"
+        },
+        {
+          "alt": "Las Grutas · grotto at sunset",
+          "caption": "Las Grutas · grotto at sunset"
+        },
+        {
+          "alt": "Terrazas al Mar · beach three blocks from Parador Sur",
+          "caption": "Terrazas al Mar · beach three blocks from Parador Sur"
+        },
+        {
+          "alt": "Las Grutas · dunes and sea",
+          "caption": "Las Grutas · dunes and sea"
+        },
+        {
+          "alt": "Las Grutas · rainbow over the beach",
+          "caption": "Las Grutas · rainbow over the beach"
+        },
+        {
+          "alt": "Las Grutas · coast at sunset",
+          "caption": "Las Grutas · coast at sunset"
+        },
+        {
+          "alt": "Las Grutas · coast and waves",
+          "caption": "Las Grutas · coast and waves"
+        },
+        {
+          "alt": "Las Grutas · beach in summer",
+          "caption": "Las Grutas · beach in summer"
+        },
+        {
+          "alt": "Las Grutas · shell beach",
+          "caption": "Las Grutas · shell beach"
+        },
+        {
+          "alt": "Las Grutas · quiet beach",
+          "caption": "Las Grutas · quiet beach"
+        },
+        {
+          "alt": "Las Grutas · boat ride",
+          "caption": "Las Grutas · boat ride"
+        },
+        {
+          "alt": "Las Grutas · diving",
+          "caption": "Las Grutas · diving"
+        },
+        {
+          "alt": "Las Grutas · underwater rocks",
+          "caption": "Las Grutas · underwater rocks"
+        },
+        {
+          "alt": "Puerto de San Antonio Oeste · beach (2023)",
+          "caption": "Puerto de San Antonio Oeste · beach (2023)"
+        },
+        {
+          "alt": "Terrazas al Mar · tidal pool (2023)",
+          "caption": "Terrazas al Mar · tidal pool (2023)"
+        },
+        {
+          "alt": "Las Grutas · coast (2023)",
+          "caption": "Las Grutas · coast (2023)"
+        },
+        {
+          "alt": "Terrazas al Mar · beach (2023)",
+          "caption": "Terrazas al Mar · beach (2023)"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "socialLabel": "Social media"
+  }
+}

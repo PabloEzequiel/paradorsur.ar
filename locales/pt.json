@@ -1,0 +1,396 @@
+{
+  "languageTag": "pt-BR",
+  "dateLocale": "pt-BR",
+  "meta": {
+    "title": "Parador Sur | Descanso perto do mar",
+    "description": "Parador Sur: apartamentos para 2 a 4 pessoas em Las Grutas, a três quadras do mar."
+  },
+  "nav": {
+    "skip": "Pular para o conteúdo",
+    "backToTop": "Parador Sur, voltar ao início",
+    "label": "Navegação principal",
+    "complex": "O complexo",
+    "stays": "Apartamentos",
+    "photos": "Fotos",
+    "location": "Localização",
+    "contact": "Contato",
+    "cta": "Consultar disponibilidade",
+    "language": "Idioma",
+    "open": "Abrir menu",
+    "close": "Fechar menu",
+    "languages": {
+      "es": "Español",
+      "en": "English",
+      "pt": "Português"
+    }
+  },
+  "theme": {
+    "darkLabel": "Modo escuro",
+    "lightLabel": "Modo claro",
+    "darkAction": "Ativar modo escuro",
+    "lightAction": "Ativar modo claro"
+  },
+  "hero": {
+    "eyebrow": "PARADOR SUR · LAS GRUTAS",
+    "titleTop": "Um descanso",
+    "titleBottom": "perto do mar.",
+    "text": "Quatro apartamentos para curtir Las Grutas no seu ritmo. Um lugar para sair, voltar e se sentir em casa.",
+    "cta": "Conheça os apartamentos",
+    "pause": "Pausar apresentação de fotos",
+    "resume": "Retomar apresentação de fotos",
+    "previous": "Foto anterior da capa",
+    "next": "Próxima foto da capa",
+    "slides": [
+      "Área externa dos apartamentos do Parador Sur",
+      "Pátio e entradas dos apartamentos sob as coberturas de sombra",
+      "Cozinha e sala de jantar de um apartamento de um quarto",
+      "Sala de estar do estúdio",
+      "Parador Sur iluminado à noite",
+      "Vista da rua dos apartamentos do Parador Sur"
+    ]
+  },
+  "inquiry": {
+    "eyebrow": "SUA PRÓXIMA ESTADIA",
+    "title": "Quando você vem?",
+    "arrival": "Entrada",
+    "departure": "Saída",
+    "guests": "Pessoas",
+    "options": {
+      "2": "2 pessoas",
+      "3": "3 pessoas",
+      "4": "4 pessoas"
+    },
+    "submit": "Consultar pelo WhatsApp",
+    "note": "A disponibilidade e os preços são confirmados pelo WhatsApp.",
+    "dateError": "A saída deve ser depois da entrada.",
+    "whatsappMessage": "Olá, gostaria de consultar a disponibilidade no Parador Sur de {start} a {end} para {guests} pessoas."
+  },
+  "intro": {
+    "eyebrow": "UM LUGAR PARA VOLTAR",
+    "titleTop": "Curta Las Grutas",
+    "titleEm": "do seu jeito.",
+    "text": "Em Terrazas al Mar, a três quadras da costa, o Parador Sur tem dois estúdios na frente e dois apartamentos de um quarto nos fundos. Cada unidade acomoda de 2 a 4 pessoas.",
+    "facts": {
+      "units": "apartamentos",
+      "blocks": "quadras do mar",
+      "people": "pessoas por unidade"
+    }
+  },
+  "band": {
+    "label": "Fotos do Parador Sur e de Las Grutas",
+    "alts": [
+      "Praia de Terrazas al Mar",
+      "Área externa do Parador Sur",
+      "Parador Sur iluminado à noite"
+    ]
+  },
+  "stays": {
+    "eyebrow": "ESCOLHA SEU ESPAÇO",
+    "title": "Seu lugar em Las Grutas",
+    "text": "Duas formas de descansar, com tudo o que você precisa para aproveitar a estadia.",
+    "mono": {
+      "kind": "01 / NA FRENTE",
+      "title": "Estúdio",
+      "text": "Um espaço prático e confortável para compartilhar seus dias de praia.",
+      "imageAlt": "Sofá e sala de estar do estúdio"
+    },
+    "dos": {
+      "kind": "02 / NOS FUNDOS",
+      "title": "Apartamento de um quarto",
+      "text": "Ambientes separados, com mais espaço para descansar e estar junto.",
+      "imageAlt": "Cozinha e sala de jantar do apartamento de um quarto"
+    },
+    "areaLabel": "área",
+    "peopleLabel": "pessoas",
+    "amenitiesTitle": "Comodidades",
+    "amenities": [
+      "Smart TV Samsung de 32″ · canais digitais · plataformas de streaming",
+      "Ar-condicionado",
+      "Geladeira e micro-ondas",
+      "Wi-Fi por fibra",
+      "Churrasqueira individual",
+      "Vaga para carro",
+      "Roupa de cama",
+      "Alarme"
+    ],
+    "cta": "Consultar este apartamento",
+    "capacity": "2 a 4"
+  },
+  "gallerySection": {
+    "eyebrow": "CONHEÇA OS ESPAÇOS",
+    "title": "Os apartamentos por dentro",
+    "text": "Veja o estúdio e o apartamento de um quarto antes de escolher sua estadia.",
+    "monoAria": "Ver galeria de fotos do estúdio",
+    "dosAria": "Ver galeria de fotos do apartamento de um quarto",
+    "monoImageAlt": "Sofá e mesa do estúdio",
+    "dosImageAlt": "Quarto do apartamento de um quarto",
+    "monoCaption": "Ver estúdio",
+    "dosCaption": "Ver apartamento de um quarto"
+  },
+  "location": {
+    "eyebrow": "TERRAZAS AL MAR",
+    "titleTop": "A praia,",
+    "titleEm": "a poucos passos.",
+    "text": "Estamos na Av. Currú Leuvú 1660, a três quadras do mar e a cerca de vinte quadras do centro de Las Grutas.",
+    "cta": "Ver localização",
+    "photoAria": "Ver galeria de fotos de Las Grutas",
+    "photoAlt": "Piscina natural de Terrazas al Mar",
+    "photoCta": "Ver fotos de Las Grutas"
+  },
+  "contact": {
+    "eyebrow": "VAMOS CONVERSAR",
+    "titleTop": "Seus dias em Las Grutas",
+    "titleBottom": "começam aqui.",
+    "text": "Escreva para consultar disponibilidade, preços ou tirar dúvidas sobre os apartamentos.",
+    "email": "Enviar um e-mail",
+    "emailSubject": "Consulta Parador Sur",
+    "whatsappMessage": "Olá, gostaria de consultar sobre o Parador Sur"
+  },
+  "gallery": {
+    "genericTitle": "PARADOR SUR · GALERIA",
+    "titlePrefix": "PARADOR SUR · ",
+    "close": "Fechar galeria",
+    "previous": "Foto anterior",
+    "next": "Próxima foto",
+    "choose": "Escolher foto da galeria",
+    "photoLabel": "Foto {number}: {caption}",
+    "mono": {
+      "title": "ESTÚDIO",
+      "photos": [
+        {
+          "alt": "Estúdio · entrada externa",
+          "caption": "Estúdio · entrada externa"
+        },
+        {
+          "alt": "Estúdio · fachada e pátio",
+          "caption": "Estúdio · fachada e pátio"
+        },
+        {
+          "alt": "Estúdio · sala e sofá",
+          "caption": "Estúdio · sala e sofá"
+        },
+        {
+          "alt": "Estúdio · sala de jantar",
+          "caption": "Estúdio · sala de jantar"
+        },
+        {
+          "alt": "Estúdio · sofá e sala",
+          "caption": "Estúdio · sofá e sala"
+        },
+        {
+          "alt": "Estúdio · cama",
+          "caption": "Estúdio · cama"
+        },
+        {
+          "alt": "Estúdio · quarto",
+          "caption": "Estúdio · quarto"
+        },
+        {
+          "alt": "Estúdio · corredor",
+          "caption": "Estúdio · corredor"
+        },
+        {
+          "alt": "Estúdio · cozinha",
+          "caption": "Estúdio · cozinha"
+        },
+        {
+          "alt": "Estúdio · bancada e cozinha",
+          "caption": "Estúdio · bancada e cozinha"
+        },
+        {
+          "alt": "Estúdio · cozinha e área de serviço",
+          "caption": "Estúdio · cozinha e área de serviço"
+        },
+        {
+          "alt": "Estúdio · geladeira e entrada",
+          "caption": "Estúdio · geladeira e entrada"
+        },
+        {
+          "alt": "Estúdio · banheiro",
+          "caption": "Estúdio · banheiro"
+        },
+        {
+          "alt": "Estúdio · sala de jantar interna",
+          "caption": "Estúdio · sala de jantar interna"
+        },
+        {
+          "alt": "Estúdio · sala de jantar interna",
+          "caption": "Estúdio · sala de jantar interna"
+        },
+        {
+          "alt": "Estúdio · entrada",
+          "caption": "Estúdio · entrada"
+        },
+        {
+          "alt": "Estúdio · área externa",
+          "caption": "Estúdio · área externa"
+        },
+        {
+          "alt": "Estúdio · estacionamento",
+          "caption": "Estúdio · estacionamento"
+        },
+        {
+          "alt": "Estúdio · frente do complexo",
+          "caption": "Estúdio · frente do complexo"
+        },
+        {
+          "alt": "Estúdio · sala de jantar e estar",
+          "caption": "Estúdio · sala de jantar e estar"
+        }
+      ]
+    },
+    "dos": {
+      "title": "APARTAMENTO DE UM QUARTO",
+      "photos": [
+        {
+          "alt": "Apartamento de um quarto · pátio e entradas",
+          "caption": "Apartamento de um quarto · pátio e entradas"
+        },
+        {
+          "alt": "Apartamento de um quarto · quarto",
+          "caption": "Apartamento de um quarto · quarto"
+        },
+        {
+          "alt": "Apartamento de um quarto · banheiro",
+          "caption": "Apartamento de um quarto · banheiro"
+        },
+        {
+          "alt": "Apartamento de um quarto · cozinha e sala de jantar",
+          "caption": "Apartamento de um quarto · cozinha e sala de jantar"
+        },
+        {
+          "alt": "Apartamento de um quarto · sala de jantar",
+          "caption": "Apartamento de um quarto · sala de jantar"
+        },
+        {
+          "alt": "Apartamento de um quarto · costa de Las Grutas",
+          "caption": "Apartamento de um quarto · costa de Las Grutas"
+        },
+        {
+          "alt": "Apartamento de um quarto · entrada do quarto",
+          "caption": "Apartamento de um quarto · entrada do quarto"
+        },
+        {
+          "alt": "Apartamento de um quarto · pia do banheiro",
+          "caption": "Apartamento de um quarto · pia do banheiro"
+        },
+        {
+          "alt": "Apartamento de um quarto · cozinha e sala de jantar",
+          "caption": "Apartamento de um quarto · cozinha e sala de jantar"
+        },
+        {
+          "alt": "Apartamento de um quarto · sala de jantar e estar",
+          "caption": "Apartamento de um quarto · sala de jantar e estar"
+        },
+        {
+          "alt": "Apartamento de um quarto · sofá e entrada do banheiro",
+          "caption": "Apartamento de um quarto · sofá e entrada do banheiro"
+        },
+        {
+          "alt": "Apartamento de um quarto · quarto e armário",
+          "caption": "Apartamento de um quarto · quarto e armário"
+        },
+        {
+          "alt": "Apartamento de um quarto · banheiro e chuveiro",
+          "caption": "Apartamento de um quarto · banheiro e chuveiro"
+        },
+        {
+          "alt": "Apartamento de um quarto · sala e jantar",
+          "caption": "Apartamento de um quarto · sala e jantar"
+        },
+        {
+          "alt": "Apartamento de um quarto · entrada externa",
+          "caption": "Apartamento de um quarto · entrada externa"
+        },
+        {
+          "alt": "Apartamento de um quarto · churrasqueira",
+          "caption": "Apartamento de um quarto · churrasqueira"
+        },
+        {
+          "alt": "Apartamento de um quarto · área externa",
+          "caption": "Apartamento de um quarto · área externa"
+        },
+        {
+          "alt": "Apartamento de um quarto · frente do complexo",
+          "caption": "Apartamento de um quarto · frente do complexo"
+        }
+      ]
+    },
+    "costa": {
+      "title": "LAS GRUTAS",
+      "photos": [
+        {
+          "alt": "Las Grutas · vista de dentro de uma gruta",
+          "caption": "Las Grutas · vista de dentro de uma gruta"
+        },
+        {
+          "alt": "Las Grutas · gruta ao entardecer",
+          "caption": "Las Grutas · gruta ao entardecer"
+        },
+        {
+          "alt": "Terrazas al Mar · praia a três quadras do Parador Sur",
+          "caption": "Terrazas al Mar · praia a três quadras do Parador Sur"
+        },
+        {
+          "alt": "Las Grutas · dunas e mar",
+          "caption": "Las Grutas · dunas e mar"
+        },
+        {
+          "alt": "Las Grutas · arco-íris na praia",
+          "caption": "Las Grutas · arco-íris na praia"
+        },
+        {
+          "alt": "Las Grutas · costa ao entardecer",
+          "caption": "Las Grutas · costa ao entardecer"
+        },
+        {
+          "alt": "Las Grutas · costa e ondas",
+          "caption": "Las Grutas · costa e ondas"
+        },
+        {
+          "alt": "Las Grutas · praia no verão",
+          "caption": "Las Grutas · praia no verão"
+        },
+        {
+          "alt": "Las Grutas · praia de conchas",
+          "caption": "Las Grutas · praia de conchas"
+        },
+        {
+          "alt": "Las Grutas · praia tranquila",
+          "caption": "Las Grutas · praia tranquila"
+        },
+        {
+          "alt": "Las Grutas · passeio de barco",
+          "caption": "Las Grutas · passeio de barco"
+        },
+        {
+          "alt": "Las Grutas · mergulho",
+          "caption": "Las Grutas · mergulho"
+        },
+        {
+          "alt": "Las Grutas · rochas submersas",
+          "caption": "Las Grutas · rochas submersas"
+        },
+        {
+          "alt": "Puerto de San Antonio Oeste · praia (2023)",
+          "caption": "Puerto de San Antonio Oeste · praia (2023)"
+        },
+        {
+          "alt": "Terrazas al Mar · piscina natural (2023)",
+          "caption": "Terrazas al Mar · piscina natural (2023)"
+        },
+        {
+          "alt": "Las Grutas · costa (2023)",
+          "caption": "Las Grutas · costa (2023)"
+        },
+        {
+          "alt": "Terrazas al Mar · praia (2023)",
+          "caption": "Terrazas al Mar · praia (2023)"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "socialLabel": "Redes sociais"
+  }
+}

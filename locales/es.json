@@ -1,0 +1,396 @@
+{
+  "languageTag": "es-AR",
+  "dateLocale": "es-AR",
+  "meta": {
+    "title": "Parador Sur | Un descanso cerca del mar",
+    "description": "Parador Sur: departamentos para 2 a 4 personas en Las Grutas, a tres cuadras del mar."
+  },
+  "nav": {
+    "skip": "Saltar al contenido",
+    "backToTop": "Parador Sur, volver al inicio",
+    "label": "Navegación principal",
+    "complex": "El complejo",
+    "stays": "Departamentos",
+    "photos": "Fotos",
+    "location": "Ubicación",
+    "contact": "Contacto",
+    "cta": "Consultar estadía",
+    "language": "Idioma",
+    "open": "Abrir menú",
+    "close": "Cerrar menú",
+    "languages": {
+      "es": "Español",
+      "en": "English",
+      "pt": "Português"
+    }
+  },
+  "theme": {
+    "darkLabel": "Modo oscuro",
+    "lightLabel": "Modo claro",
+    "darkAction": "Activar modo oscuro",
+    "lightAction": "Activar modo claro"
+  },
+  "hero": {
+    "eyebrow": "PARADOR SUR · LAS GRUTAS",
+    "titleTop": "Un descanso",
+    "titleBottom": "cerca del mar.",
+    "text": "Cuatro departamentos para vivir Las Grutas a tu ritmo. Tu espacio para salir, volver y sentirte como en casa.",
+    "cta": "Conocé los departamentos",
+    "pause": "Pausar presentación de fotos",
+    "resume": "Reanudar presentación de fotos",
+    "previous": "Foto anterior de portada",
+    "next": "Foto siguiente de portada",
+    "slides": [
+      "Exterior de los departamentos de Parador Sur",
+      "Patio y accesos a los departamentos bajo las medias sombras",
+      "Cocina y comedor de un departamento de dos ambientes",
+      "Interior y espacio de estar del monoambiente",
+      "Parador Sur iluminado de noche",
+      "Vista exterior de los departamentos de Parador Sur"
+    ]
+  },
+  "inquiry": {
+    "eyebrow": "TU PRÓXIMA ESTADÍA",
+    "title": "¿Cuándo venís?",
+    "arrival": "Entrada",
+    "departure": "Salida",
+    "guests": "Personas",
+    "options": {
+      "2": "2 personas",
+      "3": "3 personas",
+      "4": "4 personas"
+    },
+    "submit": "Consultar por WhatsApp",
+    "note": "La disponibilidad y las tarifas se confirman por WhatsApp.",
+    "dateError": "La salida debe ser posterior a la entrada.",
+    "whatsappMessage": "Hola, quiero consultar disponibilidad en Parador Sur del {start} al {end} para {guests} personas."
+  },
+  "intro": {
+    "eyebrow": "UN LUGAR PARA VOLVER",
+    "titleTop": "Las Grutas se disfruta",
+    "titleEm": "mejor a tu manera.",
+    "text": "En Terrazas al Mar, a tres cuadras de la costa, Parador Sur reúne dos monoambientes al frente y dos departamentos de dos ambientes al fondo. Cada uno aloja de 2 a 4 personas.",
+    "facts": {
+      "units": "departamentos",
+      "blocks": "cuadras del mar",
+      "people": "personas por unidad"
+    }
+  },
+  "band": {
+    "label": "Imágenes de Parador Sur y Las Grutas",
+    "alts": [
+      "La playa de Terrazas al Mar",
+      "Exterior de Parador Sur",
+      "Parador Sur iluminado de noche"
+    ]
+  },
+  "stays": {
+    "eyebrow": "ELEGÍ TU ESPACIO",
+    "title": "Tu lugar en Las Grutas",
+    "text": "Dos formas de descansar, con lo necesario para que te concentres en disfrutar.",
+    "mono": {
+      "kind": "01 / AL FRENTE",
+      "title": "Monoambiente",
+      "text": "Un espacio práctico y cómodo para compartir tus días de playa.",
+      "imageAlt": "Sofá y sector de estar del monoambiente"
+    },
+    "dos": {
+      "kind": "02 / AL FONDO",
+      "title": "Dos ambientes",
+      "text": "Ambientes separados para descansar y compartir con más lugar.",
+      "imageAlt": "Cocina y comedor del departamento de dos ambientes"
+    },
+    "areaLabel": "superficie",
+    "peopleLabel": "personas",
+    "amenitiesTitle": "Comodidades",
+    "amenities": [
+      "Smart TV Samsung de 32″ · canales digitales · plataformas",
+      "Aire acondicionado",
+      "Heladera y microondas",
+      "WiFi por fibra",
+      "Parrilla individual",
+      "Espacio para vehículo",
+      "Ropa de cama",
+      "Alarma"
+    ],
+    "cta": "Consultar este departamento",
+    "capacity": "2 a 4"
+  },
+  "gallerySection": {
+    "eyebrow": "CONOCÉ LOS ESPACIOS",
+    "title": "Los departamentos, por dentro",
+    "text": "Recorré el monoambiente y el departamento de dos ambientes antes de elegir tu lugar.",
+    "monoAria": "Ver galería del monoambiente",
+    "dosAria": "Ver galería de dos ambientes",
+    "monoImageAlt": "Sofá y mesa del monoambiente",
+    "dosImageAlt": "Dormitorio del departamento de dos ambientes",
+    "monoCaption": "Ver monoambiente",
+    "dosCaption": "Ver dos ambientes"
+  },
+  "location": {
+    "eyebrow": "TERRAZAS AL MAR",
+    "titleTop": "La playa,",
+    "titleEm": "a un paseo.",
+    "text": "Estamos en Av. Currú Leuvú 1660, a tres cuadras del mar y a unas veinte cuadras del centro de Las Grutas.",
+    "cta": "Ver ubicación",
+    "photoAria": "Ver galería de fotos de Las Grutas",
+    "photoAlt": "Piletón de Terrazas al Mar",
+    "photoCta": "Ver fotos de Las Grutas"
+  },
+  "contact": {
+    "eyebrow": "HABLEMOS",
+    "titleTop": "Tus días en Las Grutas",
+    "titleBottom": "empiezan acá.",
+    "text": "Escribinos para consultar disponibilidad, tarifas o cualquier duda sobre los departamentos.",
+    "email": "Enviar un email",
+    "emailSubject": "Consulta Parador Sur",
+    "whatsappMessage": "Hola, quiero consultar por Parador Sur"
+  },
+  "gallery": {
+    "genericTitle": "PARADOR SUR · GALERÍA",
+    "titlePrefix": "PARADOR SUR · ",
+    "close": "Cerrar galería",
+    "previous": "Foto anterior",
+    "next": "Foto siguiente",
+    "choose": "Elegir foto de la galería",
+    "photoLabel": "Foto {number}: {caption}",
+    "mono": {
+      "title": "MONOAMBIENTE",
+      "photos": [
+        {
+          "alt": "Acceso exterior y portón del monoambiente",
+          "caption": "Monoambiente · acceso exterior"
+        },
+        {
+          "alt": "Fachada rosa y patio del monoambiente",
+          "caption": "Monoambiente · fachada y patio"
+        },
+        {
+          "alt": "Sofá del monoambiente junto al acceso",
+          "caption": "Monoambiente · estar y sofá"
+        },
+        {
+          "alt": "Comedor y acceso del monoambiente",
+          "caption": "Monoambiente · comedor"
+        },
+        {
+          "alt": "Sofá y mesa del monoambiente",
+          "caption": "Monoambiente · sofá y estar"
+        },
+        {
+          "alt": "Cama del monoambiente con ropa de cama",
+          "caption": "Monoambiente · cama"
+        },
+        {
+          "alt": "Otra vista de la cama del monoambiente",
+          "caption": "Monoambiente · dormitorio"
+        },
+        {
+          "alt": "Pasillo de acceso al monoambiente",
+          "caption": "Monoambiente · pasillo"
+        },
+        {
+          "alt": "Heladera y sector de cocina",
+          "caption": "Monoambiente · cocina"
+        },
+        {
+          "alt": "Mesada y cocina del monoambiente",
+          "caption": "Monoambiente · mesada y cocina"
+        },
+        {
+          "alt": "Cocina y sector de lavado",
+          "caption": "Monoambiente · cocina y lavadero"
+        },
+        {
+          "alt": "Heladera y acceso al monoambiente",
+          "caption": "Monoambiente · heladera y acceso"
+        },
+        {
+          "alt": "Baño del monoambiente con ducha, lavamanos y bidé",
+          "caption": "Monoambiente · baño"
+        },
+        {
+          "alt": "Comedor junto a la pared de ladrillo",
+          "caption": "Monoambiente · comedor interior"
+        },
+        {
+          "alt": "Comedor junto a la pared de ladrillo",
+          "caption": "Monoambiente · comedor interior"
+        },
+        {
+          "alt": "Portal de acceso exterior del complejo",
+          "caption": "Monoambiente · acceso"
+        },
+        {
+          "alt": "Estructura exterior naranja junto a los departamentos",
+          "caption": "Monoambiente · exterior"
+        },
+        {
+          "alt": "Espacios para vehículos frente a los departamentos",
+          "caption": "Monoambiente · exterior y estacionamiento"
+        },
+        {
+          "alt": "Frente y portón del complejo Parador Sur",
+          "caption": "Monoambiente · frente del complejo"
+        },
+        {
+          "alt": "Vista amplia del comedor y sector de estar",
+          "caption": "Monoambiente · comedor y estar"
+        }
+      ]
+    },
+    "dos": {
+      "title": "DOS AMBIENTES",
+      "photos": [
+        {
+          "alt": "Patio y accesos bajo las medias sombras",
+          "caption": "Dos ambientes · patio y accesos"
+        },
+        {
+          "alt": "Dormitorio con cama matrimonial",
+          "caption": "Dos ambientes · dormitorio"
+        },
+        {
+          "alt": "Baño del departamento de dos ambientes",
+          "caption": "Dos ambientes · baño"
+        },
+        {
+          "alt": "Comedor y cocina del departamento de dos ambientes",
+          "caption": "Dos ambientes · cocina y comedor"
+        },
+        {
+          "alt": "Vista del comedor y la cocina",
+          "caption": "Dos ambientes · comedor"
+        },
+        {
+          "alt": "Vista de la costa de Las Grutas",
+          "caption": "Dos ambientes · costa de Las Grutas"
+        },
+        {
+          "alt": "Acceso al dormitorio desde el estar",
+          "caption": "Dos ambientes · acceso al dormitorio"
+        },
+        {
+          "alt": "Lavamanos y espejo del baño",
+          "caption": "Dos ambientes · lavamanos"
+        },
+        {
+          "alt": "Mesa de comedor y sector de cocina",
+          "caption": "Dos ambientes · cocina comedor"
+        },
+        {
+          "alt": "Mesa de comedor y vista hacia el estar",
+          "caption": "Dos ambientes · comedor y estar"
+        },
+        {
+          "alt": "Sofá cama y acceso al baño del departamento de dos ambientes",
+          "caption": "Dos ambientes · estar y acceso al baño"
+        },
+        {
+          "alt": "Dormitorio y espacio de guardado",
+          "caption": "Dos ambientes · dormitorio y guardado"
+        },
+        {
+          "alt": "Vista del baño y la ducha",
+          "caption": "Dos ambientes · baño y ducha"
+        },
+        {
+          "alt": "Estar con sofá y mesa de comedor",
+          "caption": "Dos ambientes · estar y comedor"
+        },
+        {
+          "alt": "Acceso exterior al departamento de dos ambientes",
+          "caption": "Dos ambientes · acceso exterior"
+        },
+        {
+          "alt": "Parrilla junto al acceso del departamento",
+          "caption": "Dos ambientes · parrilla"
+        },
+        {
+          "alt": "Vista exterior del complejo Parador Sur",
+          "caption": "Dos ambientes · exterior del complejo"
+        },
+        {
+          "alt": "Frente de los departamentos con portón y vereda",
+          "caption": "Dos ambientes · frente del complejo"
+        }
+      ]
+    },
+    "costa": {
+      "title": "LAS GRUTAS",
+      "photos": [
+        {
+          "alt": "Vista de la playa desde el interior de una gruta",
+          "caption": "Las Grutas · vista desde la gruta"
+        },
+        {
+          "alt": "Gruta abierta hacia la playa al atardecer",
+          "caption": "Las Grutas · gruta al atardecer"
+        },
+        {
+          "alt": "Playa de Terrazas al Mar, a tres cuadras de Parador Sur",
+          "caption": "Terrazas al Mar · playa a tres cuadras de Parador Sur"
+        },
+        {
+          "alt": "Dunas junto al mar de Las Grutas",
+          "caption": "Las Grutas · dunas y mar"
+        },
+        {
+          "alt": "Arcoíris sobre la playa de Las Grutas",
+          "caption": "Las Grutas · arcoíris en la playa"
+        },
+        {
+          "alt": "Carreta decorativa frente al mar",
+          "caption": "Las Grutas · costa al atardecer"
+        },
+        {
+          "alt": "Oleaje junto a la costa de Las Grutas",
+          "caption": "Las Grutas · costa y oleaje"
+        },
+        {
+          "alt": "Playa de Las Grutas durante el verano",
+          "caption": "Las Grutas · playa en verano"
+        },
+        {
+          "alt": "Conchillas sobre la playa de Las Grutas",
+          "caption": "Las Grutas · playa de conchillas"
+        },
+        {
+          "alt": "Persona en una playa tranquila junto al mar",
+          "caption": "Las Grutas · playa tranquila"
+        },
+        {
+          "alt": "Vista del mar desde una lancha",
+          "caption": "Las Grutas · paseo en lancha"
+        },
+        {
+          "alt": "Buzo bajo el agua en Las Grutas",
+          "caption": "Las Grutas · buceo"
+        },
+        {
+          "alt": "Formación rocosa bajo el agua",
+          "caption": "Las Grutas · fondo marino"
+        },
+        {
+          "alt": "Vista panorámica de la playa en el Puerto de San Antonio Oeste",
+          "caption": "Puerto de San Antonio Oeste · playa (2023)"
+        },
+        {
+          "alt": "Piletón de Terrazas al Mar",
+          "caption": "Terrazas al Mar · piletón (2023)"
+        },
+        {
+          "alt": "Playa y rocas de Las Grutas",
+          "caption": "Las Grutas · costa (2023)"
+        },
+        {
+          "alt": "Playa de Terrazas al Mar",
+          "caption": "Terrazas al Mar · playa (2023)"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "socialLabel": "Redes sociales"
+  }
+}

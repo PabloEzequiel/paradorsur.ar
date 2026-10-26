@@ -1,10 +1,89 @@
+async function initializeSite() {
+  const languageButtons = [...document.querySelectorAll('.language-options button[data-language]')];
+  let currentLanguage = document.documentElement.dataset.language || 'es';
+  let locale;
+
+  async function fetchLocale(language) {
+    const response = await fetch(`locales/${language}.json?v=i18n-2`);
+    if (!response.ok) throw new Error(`Could not load ${language} translations`);
+    return response.json();
+  }
+
+  try {
+    locale = await fetchLocale(currentLanguage);
+  } catch (error) {
+    if (currentLanguage === 'es') throw error;
+    currentLanguage = 'es';
+    locale = await fetchLocale('es');
+  }
+
+  function translated(path) {
+    const value = path.split('.').reduce((part, key) => part?.[key], locale);
+    if (typeof value !== 'string') throw new Error(`Missing translation: ${currentLanguage}.${path}`);
+    return value;
+  }
+
+  function applyStaticTranslations() {
+    document.querySelectorAll('[data-i18n]').forEach((element) => {
+      element.textContent = translated(element.dataset.i18n);
+    });
+    document.querySelectorAll('[data-i18n-leading]').forEach((element) => {
+      const textNode = [...element.childNodes].find((node) => node.nodeType === Node.TEXT_NODE);
+      if (textNode) textNode.textContent = `${translated(element.dataset.i18nLeading)} `;
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach((element) => {
+      element.alt = translated(element.dataset.i18nAlt);
+    });
+    document.querySelectorAll('[data-i18n-aria-label]').forEach((element) => {
+      element.setAttribute('aria-label', translated(element.dataset.i18nAriaLabel));
+    });
+    document.title = locale.meta.title;
+    document.querySelector('meta[name="description"]').content = locale.meta.description;
+    document.querySelector('#email-link').href = `mailto:silvidd@gmail.com?subject=${encodeURIComponent(locale.contact.emailSubject)}`;
+    document.querySelectorAll('[data-contact-whatsapp]').forEach((link) => {
+      link.href = `https://wa.me/${link.dataset.contactWhatsapp}?text=${encodeURIComponent(locale.contact.whatsappMessage)}`;
+    });
+    document.documentElement.lang = locale.languageTag;
+    document.documentElement.dataset.language = currentLanguage;
+    languageButtons.forEach((button) => {
+      button.setAttribute('aria-pressed', String(button.dataset.language === currentLanguage));
+    });
+  }
+
+const themeToggle = document.querySelector('#theme-toggle');
+const themeLabel = themeToggle.querySelector('.theme-toggle-label');
+const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+function savedTheme() {
+  try { return localStorage.getItem('paradorsur-theme'); } catch { return null; }
+}
+
+function setTheme(theme) {
+  const dark = theme === 'dark';
+  document.documentElement.dataset.theme = theme;
+  document.querySelector('meta[name="theme-color"]').content = dark ? '#111f29' : '#ffffff';
+  themeToggle.setAttribute('aria-pressed', String(dark));
+  themeToggle.setAttribute('aria-label', dark ? locale.theme.lightAction : locale.theme.darkAction);
+  themeLabel.textContent = dark ? locale.theme.lightLabel : locale.theme.darkLabel;
+}
+
+setTheme(document.documentElement.dataset.theme || 'light');
+themeToggle.addEventListener('click', () => {
+  const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  setTheme(theme);
+  try { localStorage.setItem('paradorsur-theme', theme); } catch {}
+});
+systemTheme.addEventListener('change', () => {
+  if (!savedTheme()) setTheme(systemTheme.matches ? 'dark' : 'light');
+});
+
 const heroSlides = [
-  { src: 'images/slide/01-hero-exterior-color.jpg', alt: 'Exterior de los departamentos de Parador Sur' },
-  { src: 'images/slide/02-patio-exterior-031.jpg', alt: 'Patio y accesos a los departamentos bajo las medias sombras' },
-  { src: 'images/slide/03-dos-living.jpg', alt: 'Cocina y comedor de un departamento de dos ambientes' },
-  { src: 'images/slide/04-mono-living.jpg', alt: 'Interior y espacio de estar del monoambiente' },
-  { src: 'images/slide/05-exterior-noche.jpg', alt: 'Parador Sur iluminado de noche' },
-  { src: 'images/slide/06-parsur-dos-018.jpg', alt: 'Vista exterior de los departamentos de Parador Sur' }
+  { src: 'images/slide/01-hero-exterior-color.jpg' },
+  { src: 'images/slide/02-patio-exterior-031.jpg' },
+  { src: 'images/slide/03-dos-living.jpg' },
+  { src: 'images/slide/04-mono-living.jpg' },
+  { src: 'images/slide/05-exterior-noche.jpg' },
+  { src: 'images/slide/06-parsur-dos-018.jpg' }
 ];
 const hero = document.querySelector('.hero');
 let heroImage = document.querySelector('#hero-image');
@@ -31,7 +110,7 @@ async function showSlide(index) {
   }
   if (request !== slideRequest) return;
   nextHeroImage.src = slide.src;
-  nextHeroImage.alt = slide.alt;
+  nextHeroImage.alt = locale.hero.slides[targetIndex];
   nextHeroImage.dataset.slideIndex = String(targetIndex);
   hero.dataset.slideIndex = String(targetIndex);
   nextHeroImage.removeAttribute('aria-hidden');
@@ -54,7 +133,7 @@ function scheduleSlide() {
 }
 function updatePauseButton() {
   heroPause.setAttribute('aria-pressed', String(userPaused));
-  heroPause.setAttribute('aria-label', userPaused ? 'Reanudar presentación de fotos' : 'Pausar presentación de fotos');
+  heroPause.setAttribute('aria-label', userPaused ? locale.hero.resume : locale.hero.pause);
   heroPause.firstElementChild.textContent = userPaused ? '▶' : 'Ⅱ';
   scheduleSlide();
 }
@@ -88,12 +167,12 @@ const nav = document.querySelector('.nav');
 function closeMenu() {
   nav.classList.remove('open');
   menuButton.setAttribute('aria-expanded', 'false');
-  menuButton.setAttribute('aria-label', 'Abrir menú');
+  menuButton.setAttribute('aria-label', locale.nav.open);
 }
 menuButton.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
   menuButton.setAttribute('aria-expanded', String(open));
-  menuButton.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  menuButton.setAttribute('aria-label', open ? locale.nav.close : locale.nav.open);
 });
 nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
 document.addEventListener('keydown', (event) => {
@@ -116,13 +195,16 @@ checkout.addEventListener('change', () => checkout.setCustomValidity(''));
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   if (checkout.value <= checkin.value) {
-    checkout.setCustomValidity('La salida debe ser posterior a la entrada.');
+    checkout.setCustomValidity(locale.inquiry.dateError);
     checkout.reportValidity();
     return;
   }
-  const formatDate = (value) => new Date(`${value}T12:00:00`).toLocaleDateString('es-AR');
+  const formatDate = (value) => new Date(`${value}T12:00:00`).toLocaleDateString(locale.dateLocale);
   const guests = document.querySelector('#guests').value;
-  const message = `Hola, quiero consultar disponibilidad en Parador Sur del ${formatDate(checkin.value)} al ${formatDate(checkout.value)} para ${guests} personas.`;
+  const message = locale.inquiry.whatsappMessage
+    .replace('{start}', formatDate(checkin.value))
+    .replace('{end}', formatDate(checkout.value))
+    .replace('{guests}', guests);
   window.open(`https://wa.me/5492934411532?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
 });
 
@@ -130,73 +212,70 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 
 const galleries = {
   mono: {
-    title: 'MONOAMBIENTE',
     photos: [
-      { src: 'images/dt-mono/parsur-mono-001.jpg', alt: 'Acceso exterior y portón del monoambiente', caption: 'Monoambiente · acceso exterior' },
-      { src: 'images/dt-mono/parsur-mono-002.jpg', alt: 'Fachada rosa y patio del monoambiente', caption: 'Monoambiente · fachada y patio' },
-      { src: 'images/dt-mono/parsur-mono-003.jpg', alt: 'Sofá del monoambiente junto al acceso', caption: 'Monoambiente · estar y sofá' },
-      { src: 'images/dt-mono/parsur-mono-005.jpg', alt: 'Comedor y acceso del monoambiente', caption: 'Monoambiente · comedor' },
-      { src: 'images/dt-mono/parsur-mono-006.jpg', alt: 'Sofá y mesa del monoambiente', caption: 'Monoambiente · sofá y estar' },
-      { src: 'images/dt-mono/parsur-mono-007.jpg', alt: 'Cama del monoambiente con ropa de cama', caption: 'Monoambiente · cama' },
-      { src: 'images/dt-mono/parsur-mono-008.jpg', alt: 'Otra vista de la cama del monoambiente', caption: 'Monoambiente · dormitorio' },
-      { src: 'images/dt-mono/parsur-mono-009.jpg', alt: 'Pasillo de acceso al monoambiente', caption: 'Monoambiente · pasillo' },
-      { src: 'images/dt-mono/parsur-mono-010.jpg', alt: 'Heladera y sector de cocina', caption: 'Monoambiente · cocina' },
-      { src: 'images/dt-mono/parsur-mono-011.jpg', alt: 'Mesada y cocina del monoambiente', caption: 'Monoambiente · mesada y cocina' },
-      { src: 'images/dt-mono/parsur-mono-012.jpg', alt: 'Cocina y sector de lavado', caption: 'Monoambiente · cocina y lavadero' },
-      { src: 'images/dt-mono/parsur-mono-013.jpg', alt: 'Heladera y acceso al monoambiente', caption: 'Monoambiente · heladera y acceso' },
-      { src: 'images/dt-mono/parsur-mono-014.jpg?v=20261026', alt: 'Baño del monoambiente con ducha, lavamanos y bidé', caption: 'Monoambiente · baño' },
-      { src: 'images/dt-mono/parsur-mono-016.jpg', alt: 'Comedor junto a la pared de ladrillo', caption: 'Monoambiente · comedor interior' },
-      { src: 'images/dt-mono/parsur-mono-017.jpg', alt: 'Comedor junto a la pared de ladrillo', caption: 'Monoambiente · comedor interior' },
-      { src: 'images/dt-mono/parsur-mono-018.jpg', alt: 'Portal de acceso exterior del complejo', caption: 'Monoambiente · acceso' },
-      { src: 'images/dt-mono/parsur-mono-019.jpg', alt: 'Estructura exterior naranja junto a los departamentos', caption: 'Monoambiente · exterior' },
-      { src: 'images/dt-mono/parsur-mono-020.jpg', alt: 'Espacios para vehículos frente a los departamentos', caption: 'Monoambiente · exterior y estacionamiento' },
-      { src: 'images/dt-mono/parsur-mono-021.jpg', alt: 'Frente y portón del complejo Parador Sur', caption: 'Monoambiente · frente del complejo' },
-      { src: 'images/dt-mono/parsur-mono-022.jpg', alt: 'Vista amplia del comedor y sector de estar', caption: 'Monoambiente · comedor y estar' }
+      { src: 'images/dt-mono/parsur-mono-001.jpg' },
+      { src: 'images/dt-mono/parsur-mono-002.jpg' },
+      { src: 'images/dt-mono/parsur-mono-003.jpg' },
+      { src: 'images/dt-mono/parsur-mono-005.jpg' },
+      { src: 'images/dt-mono/parsur-mono-006.jpg' },
+      { src: 'images/dt-mono/parsur-mono-007.jpg' },
+      { src: 'images/dt-mono/parsur-mono-008.jpg' },
+      { src: 'images/dt-mono/parsur-mono-009.jpg' },
+      { src: 'images/dt-mono/parsur-mono-010.jpg' },
+      { src: 'images/dt-mono/parsur-mono-011.jpg' },
+      { src: 'images/dt-mono/parsur-mono-012.jpg' },
+      { src: 'images/dt-mono/parsur-mono-013.jpg' },
+      { src: 'images/dt-mono/parsur-mono-014.jpg?v=20261026' },
+      { src: 'images/dt-mono/parsur-mono-016.jpg' },
+      { src: 'images/dt-mono/parsur-mono-017.jpg' },
+      { src: 'images/dt-mono/parsur-mono-018.jpg' },
+      { src: 'images/dt-mono/parsur-mono-019.jpg' },
+      { src: 'images/dt-mono/parsur-mono-020.jpg' },
+      { src: 'images/dt-mono/parsur-mono-021.jpg' },
+      { src: 'images/dt-mono/parsur-mono-022.jpg' }
     ]
   },
   dos: {
-    title: 'DOS AMBIENTES',
     photos: [
-      { src: 'images/dt-dosamb/parsur-dos-001.jpg', alt: 'Patio y accesos bajo las medias sombras', caption: 'Dos ambientes · patio y accesos' },
-      { src: 'images/dt-dosamb/parsur-dos-002.jpg', alt: 'Dormitorio con cama matrimonial', caption: 'Dos ambientes · dormitorio' },
-      { src: 'images/dt-dosamb/parsur-dos-003.jpg', alt: 'Baño del departamento de dos ambientes', caption: 'Dos ambientes · baño' },
-      { src: 'images/dt-dosamb/parsur-dos-004.jpg', alt: 'Comedor y cocina del departamento de dos ambientes', caption: 'Dos ambientes · cocina y comedor' },
-      { src: 'images/dt-dosamb/parsur-dos-005.jpg', alt: 'Vista del comedor y la cocina', caption: 'Dos ambientes · comedor' },
-      { src: 'images/dt-dosamb/parsur-dos-006.jpg', alt: 'Vista de la costa de Las Grutas', caption: 'Dos ambientes · costa de Las Grutas' },
-      { src: 'images/dt-dosamb/parsur-dos-007.jpg', alt: 'Acceso al dormitorio desde el estar', caption: 'Dos ambientes · acceso al dormitorio' },
-      { src: 'images/dt-dosamb/parsur-dos-008.jpg', alt: 'Lavamanos y espejo del baño', caption: 'Dos ambientes · lavamanos' },
-      { src: 'images/dt-dosamb/parsur-dos-009.jpg', alt: 'Mesa de comedor y sector de cocina', caption: 'Dos ambientes · cocina comedor' },
-      { src: 'images/dt-dosamb/parsur-dos-010.jpg', alt: 'Mesa de comedor y vista hacia el estar', caption: 'Dos ambientes · comedor y estar' },
-      { src: 'images/dt-dosamb/parsur-dos-011.jpg', alt: 'Sofá cama y acceso al baño del departamento de dos ambientes', caption: 'Dos ambientes · estar y acceso al baño' },
-      { src: 'images/dt-dosamb/parsur-dos-012.jpg', alt: 'Dormitorio y espacio de guardado', caption: 'Dos ambientes · dormitorio y guardado' },
-      { src: 'images/dt-dosamb/parsur-dos-013.jpg', alt: 'Vista del baño y la ducha', caption: 'Dos ambientes · baño y ducha' },
-      { src: 'images/dt-dosamb/parsur-dos-014.jpg', alt: 'Estar con sofá y mesa de comedor', caption: 'Dos ambientes · estar y comedor' },
-      { src: 'images/dt-dosamb/parsur-dos-015.jpg', alt: 'Acceso exterior al departamento de dos ambientes', caption: 'Dos ambientes · acceso exterior' },
-      { src: 'images/dt-dosamb/parsur-dos-016.jpg', alt: 'Parrilla junto al acceso del departamento', caption: 'Dos ambientes · parrilla' },
-      { src: 'images/dt-dosamb/parsur-dos-017.jpg', alt: 'Vista exterior del complejo Parador Sur', caption: 'Dos ambientes · exterior del complejo' },
-      { src: 'images/dt-dosamb/parsur-dos-018.jpg', alt: 'Frente de los departamentos con portón y vereda', caption: 'Dos ambientes · frente del complejo' }
+      { src: 'images/dt-dosamb/parsur-dos-001.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-002.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-003.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-004.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-005.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-006.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-007.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-008.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-009.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-010.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-011.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-012.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-013.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-014.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-015.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-016.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-017.jpg' },
+      { src: 'images/dt-dosamb/parsur-dos-018.jpg' }
     ]
   },
   costa: {
-    title: 'LAS GRUTAS',
     photos: [
-      { src: 'images/slide-lasgrutas/lasgrutas-001-vista-desde-la-gruta.jpg', alt: 'Vista de la playa desde el interior de una gruta', caption: 'Las Grutas · vista desde la gruta' },
-      { src: 'images/slide-lasgrutas/lasgrutas-002-gruta-al-atardecer.jpg', alt: 'Gruta abierta hacia la playa al atardecer', caption: 'Las Grutas · gruta al atardecer' },
-      { src: 'images/slide-lasgrutas/lasgrutas-003-playa-terrazas-al-mar.jpg', alt: 'Playa de Terrazas al Mar, a tres cuadras de Parador Sur', caption: 'Terrazas al Mar · playa a tres cuadras de Parador Sur' },
-      { src: 'images/slide-lasgrutas/lasgrutas-004-dunas-y-mar.jpg', alt: 'Dunas junto al mar de Las Grutas', caption: 'Las Grutas · dunas y mar' },
-      { src: 'images/slide-lasgrutas/lasgrutas-005-arcoiris-en-la-playa.jpg', alt: 'Arcoíris sobre la playa de Las Grutas', caption: 'Las Grutas · arcoíris en la playa' },
-      { src: 'images/slide-lasgrutas/lasgrutas-006-carreta-frente-al-mar.jpg', alt: 'Carreta decorativa frente al mar', caption: 'Las Grutas · costa al atardecer' },
-      { src: 'images/slide-lasgrutas/lasgrutas-007-costa-y-oleaje.jpg', alt: 'Oleaje junto a la costa de Las Grutas', caption: 'Las Grutas · costa y oleaje' },
-      { src: 'images/slide-lasgrutas/lasgrutas-008-playa-en-verano.jpg', alt: 'Playa de Las Grutas durante el verano', caption: 'Las Grutas · playa en verano' },
-      { src: 'images/slide-lasgrutas/lasgrutas-009-playa-de-conchillas.jpg', alt: 'Conchillas sobre la playa de Las Grutas', caption: 'Las Grutas · playa de conchillas' },
-      { src: 'images/slide-lasgrutas/lasgrutas-010-playa-tranquila.jpg', alt: 'Persona en una playa tranquila junto al mar', caption: 'Las Grutas · playa tranquila' },
-      { src: 'images/slide-lasgrutas/lasgrutas-011-paseo-en-lancha.jpg', alt: 'Vista del mar desde una lancha', caption: 'Las Grutas · paseo en lancha' },
-      { src: 'images/slide-lasgrutas/lasgrutas-012-buceo.png', alt: 'Buzo bajo el agua en Las Grutas', caption: 'Las Grutas · buceo' },
-      { src: 'images/slide-lasgrutas/lasgrutas-013-fondo-marino.png', alt: 'Formación rocosa bajo el agua', caption: 'Las Grutas · fondo marino' },
-      { src: 'images/slide-lasgrutas/lasgrutas-014-playa-puerto-sao-2023.jpg', alt: 'Vista panorámica de la playa en el Puerto de San Antonio Oeste', caption: 'Puerto de San Antonio Oeste · playa (2023)' },
-      { src: 'images/slide-lasgrutas/lasgrutas-015-pileton-terrazas-al-mar-2023.jpg', alt: 'Piletón de Terrazas al Mar', caption: 'Terrazas al Mar · piletón (2023)' },
-      { src: 'images/slide-lasgrutas/lasgrutas-016-playa-2023.jpg', alt: 'Playa y rocas de Las Grutas', caption: 'Las Grutas · costa (2023)' },
-      { src: 'images/slide-lasgrutas/lasgrutas-017-playa-terrazas-2023.jpg', alt: 'Playa de Terrazas al Mar', caption: 'Terrazas al Mar · playa (2023)' }
+      { src: 'images/slide-lasgrutas/lasgrutas-001-vista-desde-la-gruta.jpg' },
+      { src: 'images/slide-lasgrutas/lasgrutas-002-gruta-al-atardecer.jpg' },
+      { src: 'images/slide-lasgrutas/lasgrutas-003-playa-terrazas-al-mar.jpg' },
+      { src: 'images/slide-lasgrutas/lasgrutas-004-dunas-y-mar.jpg' },
+      { src: 'images/slide-lasgrutas/lasgrutas-005-arcoiris-en-la-playa.jpg' },
+      { src: 'images/slide-lasgrutas/lasgrutas-006-carreta-frente-al-mar.jpg' },
+      { src: 'images/slide-lasgrutas/lasgrutas-007-costa-y-oleaje.jpg' },
+      { src: 'images/slide-lasgrutas/lasgrutas-008-playa-en-verano.jpg' },
+      { src: 'images/slide-lasgrutas/lasgrutas-009-playa-de-conchillas.jpg' },
+      { src: 'images/slide-lasgrutas/lasgrutas-010-playa-tranquila.jpg' },
+      { src: 'images/slide-lasgrutas/lasgrutas-011-paseo-en-lancha.jpg' },
+      { src: 'images/slide-lasgrutas/lasgrutas-012-buceo.png' },
+      { src: 'images/slide-lasgrutas/lasgrutas-013-fondo-marino.png' },
+      { src: 'images/slide-lasgrutas/lasgrutas-014-playa-puerto-sao-2023.jpg' },
+      { src: 'images/slide-lasgrutas/lasgrutas-015-pileton-terrazas-al-mar-2023.jpg' },
+      { src: 'images/slide-lasgrutas/lasgrutas-016-playa-2023.jpg' },
+      { src: 'images/slide-lasgrutas/lasgrutas-017-playa-terrazas-2023.jpg' }
     ]
   }
 };
@@ -207,6 +286,7 @@ const galleryCounter = document.querySelector('#gallery-counter');
 const galleryTitle = document.querySelector('#gallery-title-modal');
 const galleryThumbnails = document.querySelector('#gallery-thumbnails');
 let activeGallery;
+let activeGalleryName;
 let galleryIndex = 0;
 let galleryOpener;
 galleryPhoto.addEventListener('load', () => { galleryPhoto.hidden = false; });
@@ -215,7 +295,8 @@ function buildGalleryThumbnails() {
   const buttons = activeGallery.photos.map((photo, index) => {
     const button = document.createElement('button');
     button.type = 'button';
-    button.setAttribute('aria-label', `Foto ${index + 1}: ${photo.caption}`);
+    const caption = locale.gallery[activeGalleryName].photos[index].caption;
+    button.setAttribute('aria-label', locale.gallery.photoLabel.replace('{number}', String(index + 1)).replace('{caption}', caption));
     const image = document.createElement('img');
     image.src = photo.src;
     image.alt = '';
@@ -233,11 +314,12 @@ function buildGalleryThumbnails() {
 function showGalleryPhoto(index) {
   galleryIndex = (index + activeGallery.photos.length) % activeGallery.photos.length;
   const photo = activeGallery.photos[galleryIndex];
+  const translatedPhoto = locale.gallery[activeGalleryName].photos[galleryIndex];
   galleryPhoto.hidden = true;
   galleryPhoto.src = photo.src;
-  galleryPhoto.alt = photo.alt;
+  galleryPhoto.alt = translatedPhoto.alt;
   if (galleryPhoto.complete && galleryPhoto.naturalWidth) galleryPhoto.hidden = false;
-  galleryCaption.textContent = photo.caption;
+  galleryCaption.textContent = translatedPhoto.caption;
   galleryCounter.textContent = `${galleryIndex + 1} / ${activeGallery.photos.length}`;
   [...galleryThumbnails.children].forEach((button, photoIndex) => {
     if (photoIndex === galleryIndex) button.setAttribute('aria-current', 'true');
@@ -251,8 +333,9 @@ function showGalleryPhoto(index) {
 document.querySelectorAll('[data-gallery]').forEach((button) => {
   button.addEventListener('click', () => {
     galleryOpener = button;
-    activeGallery = galleries[button.dataset.gallery];
-    galleryTitle.textContent = `PARADOR SUR · ${activeGallery.title}`;
+    activeGalleryName = button.dataset.gallery;
+    activeGallery = galleries[activeGalleryName];
+    galleryTitle.textContent = `${locale.gallery.titlePrefix}${locale.gallery[activeGalleryName].title}`;
     buildGalleryThumbnails();
     showGalleryPhoto(0);
     galleryDialog.showModal();
@@ -275,4 +358,48 @@ document.addEventListener('keydown', (event) => {
     event.preventDefault();
     showGalleryPhoto(galleryIndex + (event.key === 'ArrowLeft' ? -1 : 1));
   }
+});
+
+function applyLanguage() {
+  applyStaticTranslations();
+  setTheme(document.documentElement.dataset.theme || 'light');
+  updatePauseButton();
+  menuButton.setAttribute('aria-label', nav.classList.contains('open') ? locale.nav.close : locale.nav.open);
+  heroImage.alt = locale.hero.slides[Number(heroImage.dataset.slideIndex ?? slideIndex)];
+  if (nextHeroImage.getAttribute('src')) {
+    nextHeroImage.alt = locale.hero.slides[Number(nextHeroImage.dataset.slideIndex ?? slideIndex)];
+  }
+  checkout.setCustomValidity('');
+  if (galleryDialog.open) {
+    galleryTitle.textContent = `${locale.gallery.titlePrefix}${locale.gallery[activeGalleryName].title}`;
+    buildGalleryThumbnails();
+    showGalleryPhoto(galleryIndex);
+  }
+}
+
+applyLanguage();
+document.documentElement.classList.remove('i18n-loading');
+languageButtons.forEach((button) => button.addEventListener('click', async () => {
+  const nextLanguage = button.dataset.language;
+  if (nextLanguage === currentLanguage) return;
+  languageButtons.forEach((item) => { item.disabled = true; });
+  try {
+    const nextLocale = await fetchLocale(nextLanguage);
+    currentLanguage = nextLanguage;
+    locale = nextLocale;
+    applyLanguage();
+    closeMenu();
+    try { localStorage.setItem('paradorsur-language', nextLanguage); } catch {}
+  } catch (error) {
+    console.error(error);
+  } finally {
+    languageButtons.forEach((item) => { item.disabled = false; });
+  }
+}));
+
+}
+
+initializeSite().catch((error) => {
+  document.documentElement.classList.remove('i18n-loading');
+  console.error(error);
 });
