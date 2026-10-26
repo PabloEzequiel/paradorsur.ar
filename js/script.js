@@ -4,7 +4,7 @@ async function initializeSite() {
   let locale;
 
   async function fetchLocale(language) {
-    const response = await fetch(`locales/${language}.json?v=i18n-3`);
+    const response = await fetch(`locales/${language}.json?v=intro-contact-1`);
     if (!response.ok) throw new Error(`Could not load ${language} translations`);
     return response.json();
   }
