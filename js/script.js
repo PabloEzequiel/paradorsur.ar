@@ -200,14 +200,14 @@ function centerBand() {
     bandScrollTo(count + ((index % count) + count) % count);
   }
 }
-bandScrollTo(bandPhotos.length);
+bandScrollTo(bandPhotos.length + (window.matchMedia('(min-width:621px)').matches ? 1 : 0));
 bandTrack.addEventListener('scrollend', centerBand);
 function moveBand(direction) {
   centerBand();
   bandScrollTo(bandIndex() + direction, reducedMotion.matches ? 'instant' : 'smooth');
 }
 new ResizeObserver(() => {
-  bandScrollTo(bandPhotos.length);
+  bandScrollTo(bandPhotos.length + (window.matchMedia('(min-width:621px)').matches ? 1 : 0));
 }).observe(bandTrack);
 new IntersectionObserver(([entry]) => { bandVisible = entry.isIntersecting; }).observe(bandTrack);
 let bandDrag;
