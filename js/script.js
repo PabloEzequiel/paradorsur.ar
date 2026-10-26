@@ -4,7 +4,7 @@ async function initializeSite() {
   let locale;
 
   async function fetchLocale(language) {
-    const response = await fetch(`locales/${language}.json?v=band-carousel-1`);
+    const response = await fetch(`locales/${language}.json?v=band-centered-2`);
     if (!response.ok) throw new Error(`Could not load ${language} translations`);
     return response.json();
   }
@@ -180,6 +180,11 @@ let bandVisible = false;
 let bandHovered = false;
 let bandInteractedAt = 0;
 function bandStep() { return bandTrack.children[1].getBoundingClientRect().left - bandTrack.children[0].getBoundingClientRect().left; }
+function bandOffset() { return (bandTrack.clientWidth - bandStep()) / 2; }
+function bandIndex() { return Math.round((bandTrack.scrollLeft + bandOffset()) / bandStep()); }
+function bandScrollTo(index, behavior = 'instant') {
+  bandTrack.scrollTo({ left: index * bandStep() - bandOffset(), behavior });
+}
 function updateBandPause() {
   bandPause.textContent = bandPaused ? '▶' : 'Ⅱ';
   bandPause.setAttribute('aria-pressed', String(bandPaused));
@@ -188,6 +193,7 @@ function updateBandPause() {
 function bandClone(photo) {
   const clone = photo.cloneNode(true);
   clone.setAttribute('aria-hidden', 'true');
+  clone.tabIndex = -1;
   return clone;
 }
 bandTrack.prepend(...bandPhotos.map(bandClone));
@@ -196,22 +202,64 @@ function centerBand() {
   const step = bandStep();
   if (!step) return;
   const count = bandPhotos.length;
-  const index = Math.round(bandTrack.scrollLeft / step);
+  const index = bandIndex();
   if (index < count || index >= count * 2) {
-    bandTrack.scrollTo({ left: (count + ((index % count) + count) % count) * step, behavior: 'instant' });
+    bandScrollTo(count + ((index % count) + count) % count);
   }
 }
-bandTrack.scrollTo({ left: bandStep() * bandPhotos.length, behavior: 'instant' });
+bandScrollTo(bandPhotos.length);
 bandTrack.addEventListener('scrollend', centerBand);
 function moveBand(direction) {
   centerBand();
-  bandTrack.scrollBy({ left: direction * bandStep(), behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+  bandScrollTo(bandIndex() + direction, reducedMotion.matches ? 'instant' : 'smooth');
 }
 new ResizeObserver(() => {
-  bandTrack.scrollTo({ left: bandStep() * bandPhotos.length, behavior: 'instant' });
+  bandScrollTo(bandPhotos.length);
 }).observe(bandTrack);
 new IntersectionObserver(([entry]) => { bandVisible = entry.isIntersecting; }).observe(bandTrack);
-bandTrack.addEventListener('pointerdown', () => { bandInteractedAt = Date.now(); });
+let bandDrag;
+let bandSuppressClickUntil = 0;
+bandTrack.addEventListener('pointerdown', (event) => {
+  bandInteractedAt = Date.now();
+  if (event.pointerType === 'mouse' && event.button === 0) {
+    bandDrag = { x: event.clientX, left: bandTrack.scrollLeft, moved: false, id: event.pointerId };
+  }
+});
+bandTrack.addEventListener('pointermove', (event) => {
+  if (!bandDrag) return;
+  const dx = event.clientX - bandDrag.x;
+  if (Math.abs(dx) > 6 && !bandDrag.moved) {
+    bandDrag.moved = true;
+    bandTrack.setPointerCapture(event.pointerId);
+    bandTrack.classList.add('is-dragging');
+  }
+  if (bandDrag.moved) {
+    event.preventDefault();
+    bandTrack.scrollLeft = bandDrag.left - dx;
+  }
+});
+function finishBandDrag() {
+  if (!bandDrag) return;
+  const moved = bandDrag.moved;
+  if (bandTrack.hasPointerCapture(bandDrag.id)) bandTrack.releasePointerCapture(bandDrag.id);
+  bandDrag = undefined;
+  bandTrack.classList.remove('is-dragging');
+  if (moved) {
+    bandSuppressClickUntil = Date.now() + 350;
+    bandScrollTo(bandIndex(), reducedMotion.matches ? 'instant' : 'smooth');
+  }
+}
+bandTrack.addEventListener('pointerup', finishBandDrag);
+bandTrack.addEventListener('pointercancel', finishBandDrag);
+bandTrack.addEventListener('lostpointercapture', finishBandDrag);
+bandTrack.addEventListener('pointerleave', () => { if (bandDrag && !bandDrag.moved) bandDrag = undefined; });
+bandTrack.addEventListener('click', (event) => {
+  if (Date.now() < bandSuppressClickUntil) return;
+  const slide = event.target.closest('.photo-band-slide');
+  if (!slide) return;
+  bandInteractedAt = Date.now();
+  bandScrollTo([...bandTrack.children].indexOf(slide), reducedMotion.matches ? 'instant' : 'smooth');
+});
 bandTrack.addEventListener('wheel', () => { bandInteractedAt = Date.now(); }, { passive: true });
 bandTrack.addEventListener('mouseenter', () => { bandHovered = true; });
 bandTrack.addEventListener('mouseleave', () => { bandHovered = false; });
@@ -220,7 +268,7 @@ document.querySelector('#band-next').addEventListener('click', () => { bandInter
 bandPause.addEventListener('click', () => { bandPaused = !bandPaused; updateBandPause(); });
 reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) bandPaused = true; updateBandPause(); });
 setInterval(() => {
-  if (!bandPaused && bandVisible && !bandHovered && !document.hidden && !bandTrack.parentElement.contains(document.activeElement) && Date.now() - bandInteractedAt > 8000) moveBand(1);
+  if (!bandDrag && !bandPaused && bandVisible && !bandHovered && !document.hidden && !bandTrack.parentElement.contains(document.activeElement) && Date.now() - bandInteractedAt > 8000) moveBand(1);
 }, 5000);
 
 const menuButton = document.querySelector('.menu-toggle');
