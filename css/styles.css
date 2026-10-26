@@ -139,7 +139,9 @@ body.gallery-open{overflow:hidden}.gallery-dialog{width:min(900px,calc(100vw - 3
 .intro-contact{margin:32px auto 0}.intro-contact h3{font-size:23px;font-weight:600;letter-spacing:-.035em}.intro-contact p{margin-top:8px;color:var(--muted);font-size:13px;line-height:1.7}.intro-contact-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:18px}.intro-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:13px 20px;border-radius:4px;background:#25d366;color:#083b26;font-size:13px;font-weight:800}.intro-whatsapp:hover{background:#20bd5a}.intro-whatsapp svg{width:23px;height:23px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.intro-whatsapp>span:last-child{margin-left:8px;font-size:18px;font-weight:400}
 @media(max-width:420px){.intro-contact-actions{flex-direction:column;max-width:300px;margin-inline:auto}.intro-whatsapp{justify-content:flex-start}.intro-whatsapp>span:last-child{margin-left:auto}}
 
-/* Subtle branding stays inside the displayed photo, including portrait shots. */
-.gallery-stage .gallery-watermark{inset:auto;width:var(--watermark-width,80px);height:auto;transform:translate(-100%,-100%);border-radius:0;opacity:.48;filter:brightness(0) invert(1) drop-shadow(0 1px 2px #0008);pointer-events:none;user-select:none}
+/* A quiet signature in the gallery viewer, independent of the photo. */
+.gallery-stage .gallery-watermark{inset:auto auto 18px 22px;width:80px;height:auto;border-radius:0;opacity:.4;pointer-events:none;user-select:none}
+:root[data-theme="dark"] .gallery-stage .gallery-watermark{filter:brightness(0) invert(1)}
+@media(max-width:620px){.gallery-stage .gallery-watermark{left:12px;bottom:12px;width:52px}}
 
 .gallery-stage img[hidden]{display:none}

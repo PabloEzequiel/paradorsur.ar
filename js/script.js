@@ -299,24 +299,7 @@ let activeGallery;
 let activeGalleryName;
 let galleryIndex = 0;
 let galleryOpener;
-const galleryWatermark = document.querySelector('#gallery-watermark');
-function positionGalleryWatermark() {
-  galleryWatermark.hidden = true;
-  if (!galleryDialog.open || galleryPhoto.hidden || !galleryPhoto.naturalWidth) return;
-  const scale = Math.min(galleryPhoto.clientWidth / galleryPhoto.naturalWidth, galleryPhoto.clientHeight / galleryPhoto.naturalHeight);
-  const width = galleryPhoto.naturalWidth * scale;
-  const height = galleryPhoto.naturalHeight * scale;
-  const inset = Math.max(8, Math.min(18, width * .025));
-  galleryWatermark.style.left = `${galleryPhoto.offsetLeft + (galleryPhoto.clientWidth + width) / 2 - inset}px`;
-  galleryWatermark.style.top = `${galleryPhoto.offsetTop + (galleryPhoto.clientHeight + height) / 2 - inset}px`;
-  galleryWatermark.style.setProperty('--watermark-width', `${Math.min(90, width * .18)}px`);
-  galleryWatermark.hidden = false;
-}
-galleryPhoto.addEventListener('load', () => {
-  galleryPhoto.hidden = false;
-  positionGalleryWatermark();
-});
-new ResizeObserver(positionGalleryWatermark).observe(galleryPhoto.parentElement);
+galleryPhoto.addEventListener('load', () => { galleryPhoto.hidden = false; });
 
 function buildGalleryThumbnails() {
   const buttons = activeGallery.photos.map((photo, index) => {
@@ -343,11 +326,9 @@ function showGalleryPhoto(index) {
   const photo = activeGallery.photos[galleryIndex];
   const translatedPhoto = locale.gallery[activeGalleryName].photos[galleryIndex];
   galleryPhoto.hidden = true;
-  galleryWatermark.hidden = true;
   galleryPhoto.src = photo.src;
   galleryPhoto.alt = translatedPhoto.alt;
   if (galleryPhoto.complete && galleryPhoto.naturalWidth) galleryPhoto.hidden = false;
-  positionGalleryWatermark();
   galleryCaption.textContent = translatedPhoto.caption;
   galleryCounter.textContent = `${galleryIndex + 1} / ${activeGallery.photos.length}`;
   [...galleryThumbnails.children].forEach((button, photoIndex) => {
@@ -368,7 +349,6 @@ document.querySelectorAll('[data-gallery]').forEach((button) => {
     buildGalleryThumbnails();
     showGalleryPhoto(0);
     galleryDialog.showModal();
-    positionGalleryWatermark();
     document.body.classList.add('gallery-open');
   });
 });
