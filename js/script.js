@@ -180,10 +180,23 @@ const galleries = {
   costa: {
     title: 'LAS GRUTAS',
     photos: [
-      { src: 'images/img-lasgrutas/playa-panoramica.jpg', alt: 'Vista panorámica de la playa de Las Grutas', caption: 'Las Grutas · playa' },
-      { src: 'images/img-lasgrutas/mar-las-grutas.jpg', alt: 'Mar y formaciones rocosas de Las Grutas', caption: 'Las Grutas · paisaje' },
-      { src: 'images/img-lasgrutas/playa-las-grutas.jpg', alt: 'Playa y rocas de Las Grutas', caption: 'Las Grutas · costa' },
-      { src: 'images/img-lasgrutas/playa-terrazas.jpg', alt: 'Playa de Terrazas al Mar', caption: 'Terrazas al Mar · playa' }
+      { src: 'images/slide-lasgrutas/lasgrutas-001-vista-desde-la-gruta.jpg', alt: 'Vista de la playa desde el interior de una gruta', caption: 'Las Grutas · vista desde la gruta' },
+      { src: 'images/slide-lasgrutas/lasgrutas-002-gruta-al-atardecer.jpg', alt: 'Gruta abierta hacia la playa al atardecer', caption: 'Las Grutas · gruta al atardecer' },
+      { src: 'images/slide-lasgrutas/lasgrutas-003-playa-terrazas-al-mar.jpg', alt: 'Playa de Terrazas al Mar, a tres cuadras de Parador Sur', caption: 'Terrazas al Mar · playa a tres cuadras de Parador Sur' },
+      { src: 'images/slide-lasgrutas/lasgrutas-004-dunas-y-mar.jpg', alt: 'Dunas junto al mar de Las Grutas', caption: 'Las Grutas · dunas y mar' },
+      { src: 'images/slide-lasgrutas/lasgrutas-005-arcoiris-en-la-playa.jpg', alt: 'Arcoíris sobre la playa de Las Grutas', caption: 'Las Grutas · arcoíris en la playa' },
+      { src: 'images/slide-lasgrutas/lasgrutas-006-carreta-frente-al-mar.jpg', alt: 'Carreta decorativa frente al mar', caption: 'Las Grutas · costa al atardecer' },
+      { src: 'images/slide-lasgrutas/lasgrutas-007-costa-y-oleaje.jpg', alt: 'Oleaje junto a la costa de Las Grutas', caption: 'Las Grutas · costa y oleaje' },
+      { src: 'images/slide-lasgrutas/lasgrutas-008-playa-en-verano.jpg', alt: 'Playa de Las Grutas durante el verano', caption: 'Las Grutas · playa en verano' },
+      { src: 'images/slide-lasgrutas/lasgrutas-009-playa-de-conchillas.jpg', alt: 'Conchillas sobre la playa de Las Grutas', caption: 'Las Grutas · playa de conchillas' },
+      { src: 'images/slide-lasgrutas/lasgrutas-010-playa-tranquila.jpg', alt: 'Persona en una playa tranquila junto al mar', caption: 'Las Grutas · playa tranquila' },
+      { src: 'images/slide-lasgrutas/lasgrutas-011-paseo-en-lancha.jpg', alt: 'Vista del mar desde una lancha', caption: 'Las Grutas · paseo en lancha' },
+      { src: 'images/slide-lasgrutas/lasgrutas-012-buceo.png', alt: 'Buzo bajo el agua en Las Grutas', caption: 'Las Grutas · buceo' },
+      { src: 'images/slide-lasgrutas/lasgrutas-013-fondo-marino.png', alt: 'Formación rocosa bajo el agua', caption: 'Las Grutas · fondo marino' },
+      { src: 'images/slide-lasgrutas/lasgrutas-014-playa-puerto-sao-2023.jpg', alt: 'Vista panorámica de la playa en el Puerto de San Antonio Oeste', caption: 'Puerto de San Antonio Oeste · playa (2023)' },
+      { src: 'images/slide-lasgrutas/lasgrutas-015-pileton-terrazas-al-mar-2023.jpg', alt: 'Piletón de Terrazas al Mar', caption: 'Terrazas al Mar · piletón (2023)' },
+      { src: 'images/slide-lasgrutas/lasgrutas-016-playa-2023.jpg', alt: 'Playa y rocas de Las Grutas', caption: 'Las Grutas · costa (2023)' },
+      { src: 'images/slide-lasgrutas/lasgrutas-017-playa-terrazas-2023.jpg', alt: 'Playa de Terrazas al Mar', caption: 'Terrazas al Mar · playa (2023)' }
     ]
   }
 };
@@ -196,6 +209,7 @@ const galleryThumbnails = document.querySelector('#gallery-thumbnails');
 let activeGallery;
 let galleryIndex = 0;
 let galleryOpener;
+galleryPhoto.addEventListener('load', () => { galleryPhoto.hidden = false; });
 
 function buildGalleryThumbnails() {
   const buttons = activeGallery.photos.map((photo, index) => {
@@ -205,6 +219,8 @@ function buildGalleryThumbnails() {
     const image = document.createElement('img');
     image.src = photo.src;
     image.alt = '';
+    image.loading = 'lazy';
+    image.decoding = 'async';
     image.width = 96;
     image.height = 72;
     button.append(image);
@@ -217,8 +233,10 @@ function buildGalleryThumbnails() {
 function showGalleryPhoto(index) {
   galleryIndex = (index + activeGallery.photos.length) % activeGallery.photos.length;
   const photo = activeGallery.photos[galleryIndex];
+  galleryPhoto.hidden = true;
   galleryPhoto.src = photo.src;
   galleryPhoto.alt = photo.alt;
+  if (galleryPhoto.complete && galleryPhoto.naturalWidth) galleryPhoto.hidden = false;
   galleryCaption.textContent = photo.caption;
   galleryCounter.textContent = `${galleryIndex + 1} / ${activeGallery.photos.length}`;
   [...galleryThumbnails.children].forEach((button, photoIndex) => {
@@ -236,8 +254,8 @@ document.querySelectorAll('[data-gallery]').forEach((button) => {
     activeGallery = galleries[button.dataset.gallery];
     galleryTitle.textContent = `PARADOR SUR · ${activeGallery.title}`;
     buildGalleryThumbnails();
-    galleryDialog.showModal();
     showGalleryPhoto(0);
+    galleryDialog.showModal();
     document.body.classList.add('gallery-open');
   });
 });
