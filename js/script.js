@@ -174,8 +174,6 @@ updatePauseButton();
 
 const bandTrack = document.querySelector('.photo-band-track');
 const bandPhotos = [...bandTrack.children];
-const bandPause = document.querySelector('#band-pause');
-let bandPaused = reducedMotion.matches;
 let bandVisible = false;
 let bandHovered = false;
 let bandInteractedAt = 0;
@@ -184,11 +182,6 @@ function bandOffset() { return (bandTrack.clientWidth - bandStep()) / 2; }
 function bandIndex() { return Math.round((bandTrack.scrollLeft + bandOffset()) / bandStep()); }
 function bandScrollTo(index, behavior = 'instant') {
   bandTrack.scrollTo({ left: index * bandStep() - bandOffset(), behavior });
-}
-function updateBandPause() {
-  bandPause.textContent = bandPaused ? '▶' : 'Ⅱ';
-  bandPause.setAttribute('aria-pressed', String(bandPaused));
-  bandPause.setAttribute('aria-label', bandPaused ? locale.hero.resume : locale.hero.pause);
 }
 function bandClone(photo) {
   const clone = photo.cloneNode(true);
@@ -265,10 +258,8 @@ bandTrack.addEventListener('mouseenter', () => { bandHovered = true; });
 bandTrack.addEventListener('mouseleave', () => { bandHovered = false; });
 document.querySelector('#band-prev').addEventListener('click', () => { bandInteractedAt = Date.now(); moveBand(-1); });
 document.querySelector('#band-next').addEventListener('click', () => { bandInteractedAt = Date.now(); moveBand(1); });
-bandPause.addEventListener('click', () => { bandPaused = !bandPaused; updateBandPause(); });
-reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) bandPaused = true; updateBandPause(); });
 setInterval(() => {
-  if (!bandDrag && !bandPaused && bandVisible && !bandHovered && !document.hidden && !bandTrack.parentElement.contains(document.activeElement) && Date.now() - bandInteractedAt > 8000) moveBand(1);
+  if (!bandDrag && !reducedMotion.matches && bandVisible && !bandHovered && !document.hidden && !bandTrack.parentElement.contains(document.activeElement) && Date.now() - bandInteractedAt > 8000) moveBand(1);
 }, 5000);
 
 const menuButton = document.querySelector('.menu-toggle');
@@ -471,7 +462,6 @@ document.addEventListener('keydown', (event) => {
 
 function applyLanguage() {
   applyStaticTranslations();
-  updateBandPause();
   setTheme(document.documentElement.dataset.theme || 'light');
   updatePauseButton();
   menuButton.setAttribute('aria-label', nav.classList.contains('open') ? locale.nav.close : locale.nav.open);
