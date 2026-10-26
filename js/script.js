@@ -144,7 +144,7 @@ const galleries = {
       { src: 'images/dt-mono/parsur-mono-011.jpg', alt: 'Mesada y cocina del monoambiente', caption: 'Monoambiente · mesada y cocina' },
       { src: 'images/dt-mono/parsur-mono-012.jpg', alt: 'Cocina y sector de lavado', caption: 'Monoambiente · cocina y lavadero' },
       { src: 'images/dt-mono/parsur-mono-013.jpg', alt: 'Heladera y acceso al monoambiente', caption: 'Monoambiente · heladera y acceso' },
-      { src: 'images/dt-mono/parsur-mono-014.jpg', alt: 'Baño del monoambiente con ducha, lavamanos y bidé', caption: 'Monoambiente · baño' },
+      { src: 'images/dt-mono/parsur-mono-014.jpg?v=20261026', alt: 'Baño del monoambiente con ducha, lavamanos y bidé', caption: 'Monoambiente · baño' },
       { src: 'images/dt-mono/parsur-mono-016.jpg', alt: 'Comedor junto a la pared de ladrillo', caption: 'Monoambiente · comedor interior' },
       { src: 'images/dt-mono/parsur-mono-017.jpg', alt: 'Comedor junto a la pared de ladrillo', caption: 'Monoambiente · comedor interior' },
       { src: 'images/dt-mono/parsur-mono-018.jpg', alt: 'Portal de acceso exterior del complejo', caption: 'Monoambiente · acceso' },
