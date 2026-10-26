@@ -147,3 +147,7 @@ body.gallery-open{overflow:hidden}.gallery-dialog{width:min(900px,calc(100vw - 3
 .gallery-stage img[hidden]{display:none}
 
 .location-copy .button{gap:12px}.maps-button-icon{width:22px;height:29px;flex:none}.location-copy .button>span{margin-left:12px}
+
+/* Circular photo strip with native touch and trackpad scrolling. */
+.photo-band{display:block;position:relative;overflow:hidden}.photo-band-track{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}.photo-band-track::-webkit-scrollbar{display:none}.photo-band-track img{flex:0 0 calc((100% - 16px)/3);min-width:0;scroll-snap-align:start}.photo-band-track img:last-child{display:block}.photo-band-controls{position:absolute;right:18px;bottom:16px;display:flex;gap:7px}.photo-band-controls button{display:grid;place-items:center;width:40px;height:40px;border:1px solid #ffffff80;border-radius:50%;background:#143d53e6;color:#fff;font-size:20px;box-shadow:0 2px 10px #0002}.photo-band-controls button:hover{background:#143d53}.photo-band-track:focus-visible{outline:3px solid var(--sky);outline-offset:-3px}
+@media(max-width:620px){.photo-band-track img{flex-basis:85%;height:220px}.photo-band-controls{right:12px;bottom:12px}.photo-band-controls button{width:36px;height:36px}}

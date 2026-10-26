@@ -4,7 +4,7 @@ async function initializeSite() {
   let locale;
 
   async function fetchLocale(language) {
-    const response = await fetch(`locales/${language}.json?v=terrazas-low-tide-1`);
+    const response = await fetch(`locales/${language}.json?v=band-carousel-1`);
     if (!response.ok) throw new Error(`Could not load ${language} translations`);
     return response.json();
   }
@@ -171,6 +171,57 @@ reducedMotion.addEventListener('change', () => {
 });
 heroImage.classList.add('is-visible');
 updatePauseButton();
+
+const bandTrack = document.querySelector('.photo-band-track');
+const bandPhotos = [...bandTrack.children];
+const bandPause = document.querySelector('#band-pause');
+let bandPaused = reducedMotion.matches;
+let bandVisible = false;
+let bandHovered = false;
+let bandInteractedAt = 0;
+function bandStep() { return bandTrack.children[1].getBoundingClientRect().left - bandTrack.children[0].getBoundingClientRect().left; }
+function updateBandPause() {
+  bandPause.textContent = bandPaused ? '▶' : 'Ⅱ';
+  bandPause.setAttribute('aria-pressed', String(bandPaused));
+  bandPause.setAttribute('aria-label', bandPaused ? locale.hero.resume : locale.hero.pause);
+}
+function bandClone(photo) {
+  const clone = photo.cloneNode(true);
+  clone.setAttribute('aria-hidden', 'true');
+  return clone;
+}
+bandTrack.prepend(...bandPhotos.map(bandClone));
+bandTrack.append(...bandPhotos.map(bandClone));
+function centerBand() {
+  const step = bandStep();
+  if (!step) return;
+  const count = bandPhotos.length;
+  const index = Math.round(bandTrack.scrollLeft / step);
+  if (index < count || index >= count * 2) {
+    bandTrack.scrollTo({ left: (count + ((index % count) + count) % count) * step, behavior: 'instant' });
+  }
+}
+bandTrack.scrollTo({ left: bandStep() * bandPhotos.length, behavior: 'instant' });
+bandTrack.addEventListener('scrollend', centerBand);
+function moveBand(direction) {
+  centerBand();
+  bandTrack.scrollBy({ left: direction * bandStep(), behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+}
+new ResizeObserver(() => {
+  bandTrack.scrollTo({ left: bandStep() * bandPhotos.length, behavior: 'instant' });
+}).observe(bandTrack);
+new IntersectionObserver(([entry]) => { bandVisible = entry.isIntersecting; }).observe(bandTrack);
+bandTrack.addEventListener('pointerdown', () => { bandInteractedAt = Date.now(); });
+bandTrack.addEventListener('wheel', () => { bandInteractedAt = Date.now(); }, { passive: true });
+bandTrack.addEventListener('mouseenter', () => { bandHovered = true; });
+bandTrack.addEventListener('mouseleave', () => { bandHovered = false; });
+document.querySelector('#band-prev').addEventListener('click', () => { bandInteractedAt = Date.now(); moveBand(-1); });
+document.querySelector('#band-next').addEventListener('click', () => { bandInteractedAt = Date.now(); moveBand(1); });
+bandPause.addEventListener('click', () => { bandPaused = !bandPaused; updateBandPause(); });
+reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) bandPaused = true; updateBandPause(); });
+setInterval(() => {
+  if (!bandPaused && bandVisible && !bandHovered && !document.hidden && !bandTrack.parentElement.contains(document.activeElement) && Date.now() - bandInteractedAt > 8000) moveBand(1);
+}, 5000);
 
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
@@ -372,6 +423,7 @@ document.addEventListener('keydown', (event) => {
 
 function applyLanguage() {
   applyStaticTranslations();
+  updateBandPause();
   setTheme(document.documentElement.dataset.theme || 'light');
   updatePauseButton();
   menuButton.setAttribute('aria-label', nav.classList.contains('open') ? locale.nav.close : locale.nav.open);
