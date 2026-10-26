@@ -145,3 +145,5 @@ body.gallery-open{overflow:hidden}.gallery-dialog{width:min(900px,calc(100vw - 3
 @media(max-width:620px){.gallery-stage .gallery-watermark{left:12px;bottom:12px;width:52px}}
 
 .gallery-stage img[hidden]{display:none}
+
+.location-copy .button{gap:12px}.maps-button-icon{width:22px;height:29px;flex:none}.location-copy .button>span{margin-left:12px}
