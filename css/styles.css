@@ -138,3 +138,8 @@ body.gallery-open{overflow:hidden}.gallery-dialog{width:min(900px,calc(100vw - 3
 /* Direct WhatsApp contacts below the complex overview. */
 .intro-contact{margin:32px auto 0}.intro-contact h3{font-size:23px;font-weight:600;letter-spacing:-.035em}.intro-contact p{margin-top:8px;color:var(--muted);font-size:13px;line-height:1.7}.intro-contact-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:18px}.intro-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:13px 20px;border-radius:4px;background:#167044;color:#fff;font-size:13px;font-weight:800}.intro-whatsapp:hover{background:#105633}.intro-whatsapp svg{width:23px;height:23px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.intro-whatsapp>span:last-child{margin-left:8px;font-size:18px;font-weight:400}
 @media(max-width:420px){.intro-contact-actions{flex-direction:column;max-width:300px;margin-inline:auto}.intro-whatsapp{justify-content:flex-start}.intro-whatsapp>span:last-child{margin-left:auto}}
+
+/* Subtle branding stays inside the displayed photo, including portrait shots. */
+.gallery-stage .gallery-watermark{inset:auto;width:var(--watermark-width,80px);height:auto;transform:translate(-100%,-100%);border-radius:0;opacity:.48;filter:brightness(0) invert(1) drop-shadow(0 1px 2px #0008);pointer-events:none;user-select:none}
+
+.gallery-stage img[hidden]{display:none}
