@@ -87,7 +87,7 @@
   "stays": {
     "eyebrow": "CHOOSE YOUR SPACE",
     "title": "Your place in Las Grutas",
-    "text": "Two ways to unwind, with everything you need to focus on enjoying your stay.",
+    "text": "Two ways to unwind, with everything you need to enjoy your stay. Our apartments are registered with the Tourism Office.",
     "mono": {
       "kind": "01 / AT THE FRONT",
       "title": "Studio",
@@ -391,6 +391,6 @@
     }
   },
   "footer": {
-    "socialLabel": "Social media"
+    "socialLabel": "Social media and location"
   }
 }

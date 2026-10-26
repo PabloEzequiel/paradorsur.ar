@@ -87,7 +87,7 @@
   "stays": {
     "eyebrow": "ESCOLHA SEU ESPAÇO",
     "title": "Seu lugar em Las Grutas",
-    "text": "Duas formas de descansar, com tudo o que você precisa para aproveitar a estadia.",
+    "text": "Duas formas de descansar, com tudo o que você precisa para aproveitar a estadia. Nossos apartamentos estão registrados na Secretaria de Turismo.",
     "mono": {
       "kind": "01 / NA FRENTE",
       "title": "Estúdio",
@@ -391,6 +391,6 @@
     }
   },
   "footer": {
-    "socialLabel": "Redes sociais"
+    "socialLabel": "Redes sociais e localização"
   }
 }

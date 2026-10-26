@@ -66,3 +66,6 @@ typings/
 # Photos kept locally after removal from the gallery
 images/dt-mono/no/
 
+# Local agent instructions
+/AGENTS.md
+

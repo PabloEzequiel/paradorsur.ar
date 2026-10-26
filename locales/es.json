@@ -87,7 +87,7 @@
   "stays": {
     "eyebrow": "ELEGÍ TU ESPACIO",
     "title": "Tu lugar en Las Grutas",
-    "text": "Dos formas de descansar, con lo necesario para que te concentres en disfrutar.",
+    "text": "Dos formas de descansar, con lo necesario para que te concentres en disfrutar. Los departamentos están registrados en la Secretaría de Turismo.",
     "mono": {
       "kind": "01 / AL FRENTE",
       "title": "Monoambiente",
@@ -391,6 +391,6 @@
     }
   },
   "footer": {
-    "socialLabel": "Redes sociales"
+    "socialLabel": "Redes sociales y ubicación"
   }
 }

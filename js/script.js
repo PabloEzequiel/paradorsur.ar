@@ -4,7 +4,7 @@ async function initializeSite() {
   let locale;
 
   async function fetchLocale(language) {
-    const response = await fetch(`locales/${language}.json?v=i18n-2`);
+    const response = await fetch(`locales/${language}.json?v=i18n-3`);
     if (!response.ok) throw new Error(`Could not load ${language} translations`);
     return response.json();
   }
@@ -26,6 +26,16 @@ async function initializeSite() {
   function applyStaticTranslations() {
     document.querySelectorAll('[data-i18n]').forEach((element) => {
       element.textContent = translated(element.dataset.i18n);
+    });
+    document.querySelectorAll('[data-i18n-highlight]').forEach((element) => {
+      const text = translated(element.dataset.i18n);
+      const highlight = element.dataset.i18nHighlight;
+      const index = text.indexOf(highlight);
+      if (index < 0) return;
+      const mark = document.createElement('span');
+      mark.className = 'intro-place';
+      mark.textContent = highlight;
+      element.replaceChildren(document.createTextNode(text.slice(0, index)), mark, document.createTextNode(text.slice(index + highlight.length)));
     });
     document.querySelectorAll('[data-i18n-leading]').forEach((element) => {
       const textNode = [...element.childNodes].find((node) => node.nodeType === Node.TEXT_NODE);
