@@ -173,7 +173,22 @@ heroImage.classList.add('is-visible');
 updatePauseButton();
 
 const bandTrack = document.querySelector('.photo-band-track');
-const bandPhotos = [...bandTrack.children];
+const bandPhotos = PHOTO_BAND_SLIDES.map(({ file, altKey }) => {
+  const button = document.createElement('button');
+  button.className = 'photo-band-slide';
+  button.type = 'button';
+  button.dataset.i18nAriaLabel = altKey;
+  button.setAttribute('aria-label', translated(altKey));
+  const image = document.createElement('img');
+  image.src = `images/slide-horizontal/${file}`;
+  image.alt = translated(altKey);
+  image.dataset.i18nAlt = altKey;
+  image.loading = 'lazy';
+  image.draggable = false;
+  button.append(image);
+  return button;
+});
+bandTrack.replaceChildren(...bandPhotos);
 let bandVisible = false;
 let bandHovered = false;
 let bandInteractedAt = 0;
