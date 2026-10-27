@@ -93,7 +93,7 @@ const heroSlides = [
   { src: 'images/slide/03-dos-living.jpg' },
   { src: 'images/slide/04-mono-living.jpg' },
   { src: 'images/slide/05-exterior-noche.jpg' },
-  { src: 'images/slide/06-parsur-dos-018.jpg' }
+  { src: 'images/slide/06-parsur-dos-018.jpg?v=straightened-1' }
 ];
 const hero = document.querySelector('.hero');
 let heroImage = document.querySelector('#hero-image');

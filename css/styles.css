@@ -61,9 +61,9 @@ body.gallery-open{overflow:hidden}.gallery-dialog{width:min(900px,calc(100vw - 3
 
 .gallery-thumbnails{justify-content:flex-start}.gallery-thumbnails button:first-child{margin-left:auto}.gallery-thumbnails button:last-child{margin-right:auto}
 
-/* La foto frontal del último slide inclina la barra; el encuadre prioriza la vereda. */
-.hero[data-slide-index="5"]{background-image:url("../images/slide/06-parsur-dos-018.jpg");background-size:cover;background-position:51% 78%}
-.hero-image[data-slide-index="5"]{object-position:51% 78%;transform:translateX(-.3%) rotate(2deg) scale(1.03)}
+/* El encuadre del último slide prioriza la vereda. */
+.hero[data-slide-index="5"]{background-image:url("../images/slide/06-parsur-dos-018.jpg?v=straightened-1");background-size:cover;background-position:51% 78%}
+.hero-image[data-slide-index="5"]{object-position:51% 78%}
 
 .gallery-tile[data-gallery="mono"] img{object-position:center 60%}
 
