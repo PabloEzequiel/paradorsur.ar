@@ -1,14 +1,13 @@
 // Carrusel horizontal: mové una línea completa para cambiar el orden.
-// Cada foto conserva su altKey para mantener sus traducciones.
+// Los archivos están en images/slide-exteriores; conservá el altKey de cada foto.
 // La primera línea inicia el recorrido; en escritorio se muestran las primeras tres.
 const PHOTO_BAND_SLIDES = [
-  { file: "slide-pasur-h001-exterior-noche.jpg", altKey: "band.alts.2" },
-  { file: "slide-pasur-h002-arriba.jpg", altKey: "band.alts.4" },
-  { file: "slide-pasur-h203-grises.jpg", altKey: "band.alts.10" },
-  { file: "slide-pasur-h205-grises.jpg", altKey: "band.alts.11" },
-  { file: "slide-pasur-h206-grises.jpg", altKey: "band.alts.12" },
-  { file: "slide-pasur-h302-rosas.jpg", altKey: "band.alts.13" },
-  { file: "slide-pasur-h309-rosas.jpg", altKey: "band.alts.14" },
-  { file: "slide-naturaleza/slide-lasgr-h015-terrazas.jpg", altKey: "band.alts.9" },
-  { file: "slide-naturaleza/slide-lasgr-h007-playa-terrazas.jpg", altKey: "band.alts.0" },
+  { file: "parador-sur-exterior-h001.jpg", altKey: "band.alts.14" },
+  { file: "parador-sur-exterior-h002.jpg", altKey: "band.alts.10" },
+  { file: "parador-sur-exterior-h003.jpg", altKey: "band.alts.9" },
+  { file: "parador-sur-exterior-h004.jpg", altKey: "band.alts.13" },
+  { file: "parador-sur-exterior-h005.jpg", altKey: "band.alts.2" },
+  { file: "parador-sur-exterior-h006.jpg", altKey: "band.alts.12" },
+  { file: "parador-sur-exterior-h007.jpg", altKey: "band.alts.0" },
+  { file: "parador-sur-exterior-h008.jpg", altKey: "band.alts.15" },
 ];

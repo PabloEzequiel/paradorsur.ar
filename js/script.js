@@ -4,7 +4,7 @@ async function initializeSite() {
   let locale;
 
   async function fetchLocale(language) {
-    const response = await fetch(`locales/${language}.json?v=band-property-selection-2`);
+    const response = await fetch(`locales/${language}.json?v=band-exteriores-1`);
     if (!response.ok) throw new Error(`Could not load ${language} translations`);
     return response.json();
   }
@@ -180,7 +180,7 @@ const bandPhotos = PHOTO_BAND_SLIDES.map(({ file, altKey }) => {
   button.dataset.i18nAriaLabel = altKey;
   button.setAttribute('aria-label', translated(altKey));
   const image = document.createElement('img');
-  image.src = `images/slide-horizontal/${file}`;
+  image.src = `images/slide-exteriores/${file}`;
   image.alt = translated(altKey);
   image.dataset.i18nAlt = altKey;
   image.loading = 'lazy';
