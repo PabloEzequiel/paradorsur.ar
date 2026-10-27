@@ -2,13 +2,13 @@
 // Cada foto conserva su altKey para mantener sus traducciones.
 // La primera línea inicia el recorrido; en escritorio se muestran las primeras tres.
 const PHOTO_BAND_SLIDES = [
-  { file: "slide-lasgr-h009-noche-agua.jpg", altKey: "band.alts.7" },
   { file: "slide-pasur-h001-exterior-noche.jpg", altKey: "band.alts.2" },
-  { file: "slide-lasgr-h011-noche-mar.jpg", altKey: "band.alts.8" },
-  { file: "slide-pasur-h003-exterior-adealnte.jpg", altKey: "band.alts.1" },
-  { file: "slide-lasgr-h008-estrella.jpg", altKey: "band.alts.5" },
   { file: "slide-pasur-h002-arriba.jpg", altKey: "band.alts.4" },
-  { file: "slide-lasgr-h007-playa-terrazas.jpg", altKey: "band.alts.0" },
-  { file: "slide-pasur-h005-izquierda.jpg", altKey: "band.alts.3" },
-  { file: "slide-lasgr-h015-terrazas.jpg", altKey: "band.alts.9" },
+  { file: "slide-pasur-h203-grises.jpg", altKey: "band.alts.10" },
+  { file: "slide-pasur-h205-grises.jpg", altKey: "band.alts.11" },
+  { file: "slide-pasur-h206-grises.jpg", altKey: "band.alts.12" },
+  { file: "slide-pasur-h302-rosas.jpg", altKey: "band.alts.13" },
+  { file: "slide-pasur-h309-rosas.jpg", altKey: "band.alts.14" },
+  { file: "slide-naturaleza/slide-lasgr-h015-terrazas.jpg", altKey: "band.alts.9" },
+  { file: "slide-naturaleza/slide-lasgr-h007-playa-terrazas.jpg", altKey: "band.alts.0" },
 ];
