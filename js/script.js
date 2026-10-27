@@ -305,7 +305,7 @@ form.addEventListener('submit', (event) => {
     .replace('{start}', formatDate(checkin.value))
     .replace('{end}', formatDate(checkout.value))
     .replace('{guests}', guests);
-  window.open(`https://wa.me/5492934411532?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+  window.open(`https://wa.me/5491136248893?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
 });
 
 document.querySelector('#year').textContent = new Date().getFullYear();
