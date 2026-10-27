@@ -4,7 +4,7 @@ async function initializeSite() {
   let locale;
 
   async function fetchLocale(language) {
-    const response = await fetch(`locales/${language}.json?v=band-renamed-5`);
+    const response = await fetch(`locales/${language}.json?v=dos-gallery-17`);
     if (!response.ok) throw new Error(`Could not load ${language} translations`);
     return response.json();
   }
@@ -342,7 +342,6 @@ const galleries = {
       { src: 'images/dt-dosamb/parsur-dos-003.jpg' },
       { src: 'images/dt-dosamb/parsur-dos-004.jpg' },
       { src: 'images/dt-dosamb/parsur-dos-005.jpg' },
-      { src: 'images/dt-dosamb/parsur-dos-006.jpg' },
       { src: 'images/dt-dosamb/parsur-dos-007.jpg' },
       { src: 'images/dt-dosamb/parsur-dos-008.jpg' },
       { src: 'images/dt-dosamb/parsur-dos-009.jpg' },
