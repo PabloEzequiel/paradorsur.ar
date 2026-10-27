@@ -62,7 +62,7 @@ body.gallery-open{overflow:hidden}.gallery-dialog{width:min(900px,calc(100vw - 3
 .gallery-thumbnails{justify-content:flex-start}.gallery-thumbnails button:first-child{margin-left:auto}.gallery-thumbnails button:last-child{margin-right:auto}
 
 /* El encuadre del último slide prioriza la vereda. */
-.hero[data-slide-index="5"]{background-image:url("../images/slide/06-parsur-dos-018.jpg?v=straightened-1");background-size:cover;background-position:51% 78%}
+.hero[data-slide-index="5"]{background-image:url("../images/slide/06-parsur-dos-018.jpg?v=hero-final-2");background-size:cover;background-position:51% 78%}
 .hero-image[data-slide-index="5"]{object-position:51% 78%}
 
 .gallery-tile[data-gallery="mono"] img{object-position:center 60%}
