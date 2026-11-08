@@ -107,12 +107,14 @@
       "kind": "01 / AL FRENTE",
       "title": "Monoambiente",
       "text": "Un espacio práctico y cómodo para compartir tus días de playa.",
+      "detailLink": "Abrir página del monoambiente",
       "imageAlt": "Sofá y sector de estar del monoambiente"
     },
     "dos": {
       "kind": "02 / AL FONDO",
       "title": "Dos ambientes",
       "text": "Ambientes separados para descansar y compartir con más lugar.",
+      "detailLink": "Abrir página de dos ambientes",
       "imageAlt": "Cocina y comedor del departamento de dos ambientes"
     },
     "areaLabel": "superficie",

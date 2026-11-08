@@ -107,12 +107,14 @@
       "kind": "01 / AT THE FRONT",
       "title": "Studio",
       "text": "A practical, comfortable space to share your beach days.",
+      "detailLink": "Open the studio page",
       "imageAlt": "Sofa and living area in the studio"
     },
     "dos": {
       "kind": "02 / AT THE REAR",
       "title": "One-bedroom apartment",
       "text": "Separate rooms with more space to relax and spend time together.",
+      "detailLink": "Open the one-bedroom apartment page",
       "imageAlt": "Kitchen and dining area in the one-bedroom apartment"
     },
     "areaLabel": "floor area",

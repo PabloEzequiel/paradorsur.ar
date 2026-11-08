@@ -107,12 +107,14 @@
       "kind": "01 / NA FRENTE",
       "title": "Estúdio",
       "text": "Um espaço prático e confortável para compartilhar seus dias de praia.",
+      "detailLink": "Abrir a página do estúdio",
       "imageAlt": "Sofá e sala de estar do estúdio"
     },
     "dos": {
       "kind": "02 / NOS FUNDOS",
       "title": "Apartamento de um quarto",
       "text": "Ambientes separados, com mais espaço para descansar e estar junto.",
+      "detailLink": "Abrir a página do apartamento de um quarto",
       "imageAlt": "Cozinha e sala de jantar do apartamento de um quarto"
     },
     "areaLabel": "área",
